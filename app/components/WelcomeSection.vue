@@ -1,14 +1,9 @@
 <script setup>
 import profileImage from '/img/components/welcomeSection/profile.jpg'
-import { ref } from 'vue'
+import { useLazyFadeImg } from '@/composables/useLazyFadeImg';
 
-onMounted(() => {
-  setTimeout(() => {
-    isVisible.value = true
-  }, 100)
-})
-const isVisible = ref(false)
 
+const { lazyImg } = useLazyFadeImg();
 
 </script>
 
@@ -29,8 +24,9 @@ const isVisible = ref(false)
 
         </div>
 
-        <img :src="profileImage"  :class="{ 'opacity-0': !isVisible, 'fade': isVisible }" @load="isVisible = true" loading="lazy" alt="Profile image" />
+        <img :data-lazy="profileImage" src="" ref="lazyImg" class="opacity-0" />
     </div>
+    <NuxtLink to="#skills" id="arrowDown"><img class="arrow-down" src="/img/footer/arrowup.png"></NuxtLink>
 </template>
 
 <style lang="scss" scoped>
@@ -119,6 +115,28 @@ const isVisible = ref(false)
     }
 }
 
+
+/* needed for lazyload animation */
+.opacity-0 {
+    transform: translateX(50%);
+    opacity: 0;
+    transition: transform 3s, opacity 3s;
+
+    @media(max-width: 1286px) {
+        transform: translateX(14%);
+    }
+
+    @media(max-width: 370px) {
+        transform: translateX(5%);
+    }
+}
+
+/* needed for lazyload animation */
+.fade {
+    transform: translateX(0);
+    opacity: 1;
+    transition: opacity 3s, transform 3s;
+}
 
 .primary {
     color: #FA2759;
@@ -337,31 +355,6 @@ button {
         }
     }
 }
-
-
-
-/* needed for lazyload animation */
-.opacity-0 {
-    transform: translateX(50%);
-    opacity: 0;
-    transition: all 3000ms;
-
-    @media(max-width: 1286px) {
-        transform: translateX(14%);
-    }
-
-    @media(max-width: 370px) {
-        transform: translateX(5%);
-    }
-}
-
-/* needed for lazyload animation */
-.fade {
-    transform: translateX(0);
-    opacity: 1;
-    transition: all 3000ms;
-}
-
 
 @keyframes typing {
     from {
