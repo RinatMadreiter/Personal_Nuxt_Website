@@ -1,0 +1,48 @@
+
+@forward '../fonts/fonts';
+@forward './burger-menu';
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: 'Inter', sans-serif;
+}
+
+input {
+    font-family: 'Inter', sans-serif;
+}
+
+textarea {
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #1A1A1A;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #888;
+
+    &:hover {
+        background-color: #FA2759;
+        transform: scale(2);
+    }
+}
+        
