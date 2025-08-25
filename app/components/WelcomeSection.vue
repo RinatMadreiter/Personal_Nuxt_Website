@@ -30,25 +30,20 @@ const { lazyImg } = useLazyFadeImg();
 </template>
 
 <style lang="scss" scoped>
-:host {
+
+.main {
     display: flex;
-    flex-direction: column;
     font-size: 64px;
-    height: 88vh;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-top: 80px;
+    margin-right: 14vw;
+    margin-left: 14vw;
 
     p {
         margin-block-start: 0;
         margin-block-end: 0;
     }
-}
-
-.main {
-    margin-top: 80px;
-    margin-right: 14vw;
-    margin-left: 14vw;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
 
     @media(max-width: 1000px) {
         flex-direction: column-reverse;
