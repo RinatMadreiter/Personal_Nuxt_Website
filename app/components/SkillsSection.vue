@@ -1,9 +1,17 @@
+<script setup>
+
+import { useLazyFadeImg } from '@/composables/useLazyFadeImg';
+const { lazyImg } = useLazyFadeImg();
+
+</script>
+
+
 <template>
     <section id="skills">
         <h1>My Skills</h1>
         <div class="skills-container">
-            <div class="skill">HTML<img class="opacity-0" src="" ref="lazyImg" ></div>
-            <div class="skill">CSS<img class="opacity-0" data-lazy="/img/skills/css.svg"></div>
+            <div class="skill">HTML<img class="opacity-0" data-lazy="/img/skills/html.svg" ref="lazyImg"></div>
+            <div class="skill">CSS<img class="opacity-0" src="/img/skills/css.svg"></div>
             <div class="skill ">Java Script<img class="opacity-0" data-lazy="/img/skills/js.svg"></div>
             <div class="skill">Angular<img class="opacity-0" data-lazy="/img/skills/angular.svg"></div>
             <div class="skill">Github<img class="opacity-0" data-lazy="/img/skills/github.svg"></div>
@@ -16,7 +24,6 @@
     </section>
 </template>
 
-<script setup>import { useLazyFadeImg } from '@/composables/useLazyFadeImg';</script>
 
 <style lang="scss" scoped>
 :host {

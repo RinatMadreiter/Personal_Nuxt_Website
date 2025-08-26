@@ -2,7 +2,6 @@
 import profileImage from '/img/components/welcomeSection/profile.jpg'
 import { useLazyFadeImg } from '@/composables/useLazyFadeImg';
 
-
 const { lazyImg } = useLazyFadeImg();
 
 </script>
