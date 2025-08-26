@@ -10,7 +10,7 @@ const { lazyImg } = useLazyFadeImg();
 <template>
     <div class="main">
         <div class="greeting-contact-container">
-            <div>
+            <div class="dynamic-typing">
                 <div class="typing-demo">
                     Hi, I`m <span class="secondary">Rinat Madreiter</span>
                 </div>
@@ -26,11 +26,9 @@ const { lazyImg } = useLazyFadeImg();
 
         <img :data-lazy="profileImage" src="" ref="lazyImg" class="opacity-0" />
     </div>
-    <NuxtLink to="#skills" id="arrowDown"><img class="arrow-down" src="/img/footer/arrowup.png"></NuxtLink>
 </template>
 
 <style lang="scss" scoped>
-
 .main {
     display: flex;
     font-size: 64px;
@@ -78,8 +76,13 @@ const { lazyImg } = useLazyFadeImg();
             height: fit-content;
         }
 
-        @media only screen and (orientation: landscape) and (max-width: 850px) and (max-height: 550px) {
-            width: 210px;
+        @media only screen and (orientation: landscape) and (max-width: 950px) and (min-height:400px) and (max-height: 550px) {
+            width: 260px;
+            height: fit-content;
+        }
+        
+        @media only screen and (orientation: landscape) and (max-width: 950px) and (max-height: 399px) {
+            width: 180px;
             height: fit-content;
         }
 
@@ -111,24 +114,23 @@ const { lazyImg } = useLazyFadeImg();
 }
 
 
+.dynamic-typing {
+
+    @media(min-width: 1287px) {
+        width: 696px;
+    }
+}
+
 /* needed for lazyload animation */
 .opacity-0 {
     transform: translateX(50%);
     opacity: 0;
     transition: transform 3s, opacity 3s;
-
-    @media(max-width: 1286px) {
-        transform: translateX(14%);
-    }
-
-    @media(max-width: 370px) {
-        transform: translateX(5%);
-    }
 }
 
 /* needed for lazyload animation */
 .fade {
-    transform: translateX(0);
+    transform: translateX(0%);
     opacity: 1;
     transition: opacity 3s, transform 3s;
 }
@@ -205,7 +207,12 @@ button {
         min-width: 30vw;
     }
 
-    @media(max-width: 1000px) and (min-width: 720px) {
+    @media only screen and (orientation: landscape) and (max-width: 1000px) {
+        margin-top: 8px;
+        min-width: 45vw;
+    }
+
+    @media(max-width: 1000px) and (orientation: portrait) and (min-width: 720px) {
         min-width: 30vw;
     }
 
@@ -247,47 +254,6 @@ button {
     }
 }
 
-
-#arrowDown {
-    width: 57px;
-    height: 57px;
-
-    @media only screen and (orientation: landscape) and (max-width: 1000px) {
-        display: none;
-    }
-
-    @media only screen and (max-width: 720px) {
-        display: none;
-    }
-}
-
-.arrow-down {
-    transform: (rotate(0.5turn));
-    width: 15px;
-    margin-left: calc(50vw - 50px);
-    margin-right: calc(50vw - 50px);
-    align-items: center;
-    border-radius: 50%;
-    border: 1px solid black;
-    padding: 20px;
-    cursor: pointer;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(241deg) brightness(103%) contrast(103%);
-    animation: move-down ease-in-out 1000ms infinite alternate;
-
-    &:hover {
-        cursor: pointer;
-        filter: invert(50%) sepia(86%) saturate(6872%) hue-rotate(330deg) brightness(97%) contrast(101%);
-    }
-
-    @media(max-width: 1286px) {
-        margin-left: calc(50vw - 39px);
-    }
-
-
-    @media only screen and (orientation: landscape) and (max-width: 1000px) {
-        display: none;
-    }
-}
 
 @media(max-width: 1286px) {
 

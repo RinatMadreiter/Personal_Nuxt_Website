@@ -1,7 +1,7 @@
 <template>
     <div class="nav-container">
-        <NuxtLink to="/"><img src="/img/logo.png" alt="Logo" class="logo"></NuxtLink>
-        
+        <NuxtLink to="/" @click.stop="menuOpen = false"><img src="/img/logo.png" alt="Logo" class="logo"></NuxtLink>
+
         <!-- Desktop Navigation -->
         <div class="link-container hide-mobile">
             <NuxtLink to="#myWork">PORTFOLIO</NuxtLink>
@@ -66,6 +66,10 @@ const toggleMenu = () => {
 
     @media(min-width: 1920px) and (min-height: 1080px) {
         margin-top: 1.5vh;
+    }
+
+    a {
+        -webkit-tap-highlight-color: transparent;
     }
 }
 
@@ -253,8 +257,7 @@ img {
             transform: translate(100%, -100%);
         }
 
-        100% {
-            opacity: 1;
+        100% {          opacity: 1;
             transform: translateX(8vw);
         }
     }

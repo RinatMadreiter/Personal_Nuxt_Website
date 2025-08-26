@@ -2,5 +2,6 @@
   <div>
     <NavigationMenu />
     <WelcomeSection />
+    <SkillsSection />
   </div>
 </template>

@@ -1,0 +1,183 @@
+<template>
+    <section id="skills">
+        <h1>My Skills</h1>
+        <div class="skills-container">
+            <div class="skill">HTML<img class="opacity-0" src="" ref="lazyImg" ></div>
+            <div class="skill">CSS<img class="opacity-0" data-lazy="/img/skills/css.svg"></div>
+            <div class="skill ">Java Script<img class="opacity-0" data-lazy="/img/skills/js.svg"></div>
+            <div class="skill">Angular<img class="opacity-0" data-lazy="/img/skills/angular.svg"></div>
+            <div class="skill">Github<img class="opacity-0" data-lazy="/img/skills/github.svg"></div>
+            <div class="skill">Firebase<img class="opacity-0" data-lazy="/img/skills/firebase.svg"></div>
+            <div class="skill">Apps<img class="opacity-0" data-lazy="/img/skills/phone.png"></div>
+            <div class="skill">Scrum<img class="opacity-0" data-lazy="/img/skills/scrum.svg"></div>
+            <div class="skill"><span class="mt-16"> Business Software </span><img class="opacity-0"
+                    data-lazy="/img/skills/business.png"></div>
+        </div>
+    </section>
+</template>
+
+<script setup>import { useLazyFadeImg } from '@/composables/useLazyFadeImg';</script>
+
+<style lang="scss" scoped>
+:host {
+    display: flex;
+    flex-direction: column;
+    background-color: #131111;
+    justify-content: center;
+    padding-right: 10vw;
+    padding-left: 10vw;
+    margin-right: 14vw;
+    margin-left: 14vw;
+    font-size: 18px;
+    height: 100vh;
+
+    @media only screen and (orientation: landscape) and (max-width: 1000px) {
+        margin-right: 10vw;
+        margin-left: 10vw;
+    }
+
+    @media(max-width: 1286px) {
+        height: auto;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    @media(max-width: 720px) {
+        margin-right: 0;
+        margin-left: 0;
+        background-color: #000000;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+
+h1 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 90px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+
+    @media(max-width: 1286px) {
+        margin-top: 50px;
+    }
+
+    @media(max-width: 720px) {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    @media(min-width: 1920px) and (min-height: 1080px) {
+        font-size: 5vh;
+        margin-bottom: 2vh;
+    }
+}
+
+.skills-container {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+    img {
+        position: absolute;
+        top: -31px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: white;
+        padding: 15px;
+        object-fit: contain;
+        border: 1px solid white;
+        box-shadow: 0px 4px 4px rgba(197, 197, 197, 0.25);
+
+        @media (max-width: 500px) {
+            padding: 10px;
+            top: -20px;
+            width: 20px;
+            height: 20px;
+        }
+
+        @media(min-width: 1920px) and (min-height: 1080px) {
+            padding: 2.5vh;
+            top: -5vh;
+            width: 5vh;
+            height: 5vh;
+        }
+    }
+
+
+    .skill {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        color: #000000;
+        background-color: #FFFFFF;
+        width: 183px;
+        height: 120px;
+        border-radius: 8px;
+        margin: 30px 19px 30px 19px;
+        box-shadow: 0px 0px 3px 0px rgb(255, 255, 255);
+
+        @media(max-width: 1286px) {
+            width: 126px;
+            height: 112px;
+            border-radius: 8px;
+            margin: 28px 18px 23px 18px;
+        }
+
+        @media(max-width: 600px) {
+            width: 107.66px;
+            height: 70.57px;
+            margin: 30px 4px 30px 4px;
+            font-size: 16px;
+        }
+
+        @media(min-width: 1920px) and (min-height: 1080px) {
+            width: 23vh;
+            height: 18vh;
+            font-size: 3vh;
+            margin: 6vh 2vh
+        }
+    }
+
+    /* needed for lazyload animation */
+    .opacity-0 {
+        transform: translateX(200%);
+        opacity: 0;
+        transition: all 1500ms;
+
+        @media(max-width: 720px) {
+            transform: translateX(15%);
+        }
+
+        @media(min-width: 720px) and (max-width: 1200px) {
+            transform: translateX(30%);
+        }
+
+        @media(max-width: 370px) {
+            transform: translateX(5%);
+        }
+
+    }
+
+    .fade {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 1500ms;
+    }
+
+    .mt-16 {
+
+        @media(max-width: 600px) {
+            margin-top: 16px;
+        }
+    }
+}
+</style>
