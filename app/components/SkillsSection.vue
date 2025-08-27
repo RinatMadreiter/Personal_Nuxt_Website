@@ -3,11 +3,11 @@
 import { useLazyFadeImg } from '@/composables/useLazyFadeImg';
 
 const skillsImgSrcPath = [
+    { name: 'Nuxt', path: '/img/skills/nuxt.svg' },
+    { name: 'Vue', path: '/img/skills/vue.svg' },
+    { name: 'JavaScript', path: '/img/skills/js.svg' },
     { name: 'HTML', path: '/img/skills/html.svg' },
     { name: 'CSS', path: '/img/skills/css.svg' },
-    { name: 'JavaScript', path: '/img/skills/js.svg' },
-    { name: 'Vue', path: '/img/skills/vue.svg' },
-    { name: 'Nuxt', path: '/img/skills/nuxt.svg' },
     { name: 'Github', path: '/img/skills/github.svg' },
     { name: 'Apps', path: '/img/skills/phone.png' },
     { name: 'Scrum', path: '/img/skills/scrum.svg' },
