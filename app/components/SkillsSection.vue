@@ -1,7 +1,20 @@
 <script setup>
 
 import { useLazyFadeImg } from '@/composables/useLazyFadeImg';
-const { lazyImg } = useLazyFadeImg();
+
+const skillsImgSrcPath = [
+    { name: 'HTML', path: '/img/skills/html.svg' },
+    { name: 'CSS', path: '/img/skills/css.svg' },
+    { name: 'JavaScript', path: '/img/skills/js.svg' },
+    { name: 'Vue', path: '/img/skills/vue.svg' },
+    { name: 'Nuxt', path: '/img/skills/nuxt.svg' },
+    { name: 'Github', path: '/img/skills/github.svg' },
+    { name: 'Apps', path: '/img/skills/phone.png' },
+    { name: 'Scrum', path: '/img/skills/scrum.svg' },
+    { name: 'Business Software', path: '/img/skills/business.png' }
+];
+
+const skillsImgRefs = skillsImgSrcPath.map(() => useLazyFadeImg());
 
 </script>
 
@@ -10,26 +23,21 @@ const { lazyImg } = useLazyFadeImg();
     <section id="skills">
         <h1>My Skills</h1>
         <div class="skills-container">
-            <div class="skill">HTML<img class="opacity-0" data-lazy="/img/skills/html.svg" ref="lazyImg"></div>
-            <div class="skill">CSS<img class="opacity-0" src="/img/skills/css.svg"></div>
-            <div class="skill ">Java Script<img class="opacity-0" data-lazy="/img/skills/js.svg"></div>
-            <div class="skill">Angular<img class="opacity-0" data-lazy="/img/skills/angular.svg"></div>
-            <div class="skill">Github<img class="opacity-0" data-lazy="/img/skills/github.svg"></div>
-            <div class="skill">Firebase<img class="opacity-0" data-lazy="/img/skills/firebase.svg"></div>
-            <div class="skill">Apps<img class="opacity-0" data-lazy="/img/skills/phone.png"></div>
-            <div class="skill">Scrum<img class="opacity-0" data-lazy="/img/skills/scrum.svg"></div>
-            <div class="skill"><span class="mt-16"> Business Software </span><img class="opacity-0"
-                    data-lazy="/img/skills/business.png"></div>
-        </div>
+            <div class="skill" v-for="(skill, index) in skillsImgSrcPath" :key="skill.name">
+                {{ skill.name }}
+                <img class="opacity-0" :data-lazy="skill.path" :ref="el => skillsImgRefs[index].lazyImg.value = el" />
+            </div>
+        </div>    
     </section>
 </template>
 
 
 <style lang="scss" scoped>
-:host {
+#skills {
     display: flex;
     flex-direction: column;
     background-color: #131111;
+    outline: 2px solid lawngreen;
     justify-content: center;
     padding-right: 10vw;
     padding-left: 10vw;
@@ -95,7 +103,7 @@ h1 {
         top: -31px;
         width: 30px;
         height: 30px;
-        border-radius: 50%;
+        border-radius: 32%;
         background-color: white;
         padding: 15px;
         object-fit: contain;
