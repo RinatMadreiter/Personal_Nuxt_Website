@@ -5,6 +5,7 @@
       <WelcomeSection />
     </main>
     <SkillsSection />
+    <ContactSection />
   </div>
 </template>
 
