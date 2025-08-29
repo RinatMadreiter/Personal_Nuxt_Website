@@ -7,7 +7,7 @@
             <button @click="showJS">Java Script</button>
         </div>
         <div class="work-collection">
-            <div v-if="displayJS" class="single-work-container">
+            <div v-show="displayJS" class="single-work-container">
                 <img class="opacity-0"
                     :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
                     src="/img/work/photogallery.png" data-lazy="/img/work/photogallery.png" ref="imgPhotoGallery" />
@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <div v-if="displayJS" class="single-work-container">
+            <div v-show="displayJS" class="single-work-container">
                 <img class="opacity-0"
                     :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
                     src="/img/work/quizapp.png" data-lazy="/img/work/quizapp.png" ref="imgQuizApp" />
@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <div v-if="displayJS" class="single-work-container">
+            <div v-show="displayJS" class="single-work-container">
                 <img id="elpolloloco" class="opacity-0"
                     :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
                     src="/img/work/elpolloloco.png" data-lazy="/img/work/elpolloloco.png" ref="imgElPolloLoco" />
@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <div v-if="displayJS" class="single-work-container">
+            <div v-show="displayJS" class="single-work-container">
                 <img class="opacity-0"
                     :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
                     src="/img/work/pokedex.png" data-lazy="/img/work/pokedex.png" ref="imgPokedex" />
@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <div v-if="displayAngular" class="single-work-container">
+            <div v-show="displayAngular" class="single-work-container">
                 <img class="opacity-0"
                     :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
                     src="/img/work/portfolio.png" data-lazy="/img/work/portfolio.png" ref="imgPortfolio" />
@@ -82,7 +82,7 @@
                 </div>
             </div>
 
-            <div v-if="displayAngular" class="single-work-container">
+            <div v-show="displayAngular" class="single-work-container">
                 <img class="opacity-0"
                     :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
                     src="/img/work/cardgame.png" data-lazy="/img/work/cardgame.png" ref="imgCardGame" />
@@ -195,6 +195,7 @@ async function showAngular() {
     margin-top: 80px;
     margin-right: 14vw;
     margin-left: 14vw;
+    text-align: center;
 
     @media(max-width: 1286px) {
         margin-top: 50px;
@@ -423,6 +424,11 @@ img {
 
     margin-right: 14vw;
     margin-left: 14vw;
+    margin-top: 50px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+
 
     @media(max-width: 720px) {
         display: flex;
