@@ -17,7 +17,9 @@ export function useLazyFadeImg() {
         });
       });
 
-      observer.observe(lazyImg.value);
+      if (lazyImg.value instanceof Element) {
+        observer.observe(lazyImg.value)
+      }
     }
   });
 

@@ -27,7 +27,7 @@ const skillsImgRefs = skillsImgSrcPath.map(() => useLazyFadeImg());
                 {{ skill.name }}
                 <img class="opacity-0" :data-lazy="skill.path" :ref="el => skillsImgRefs[index].lazyImg.value = el" />
             </div>
-        </div>    
+        </div>
     </section>
 </template>
 
@@ -37,7 +37,6 @@ const skillsImgRefs = skillsImgSrcPath.map(() => useLazyFadeImg());
     display: flex;
     flex-direction: column;
     background-color: #131111;
-    outline: 2px solid lawngreen;
     justify-content: center;
     padding-right: 10vw;
     padding-left: 10vw;
