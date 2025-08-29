@@ -3,6 +3,7 @@
         <h1 class="work-heading">My Work</h1>
         <div class="btn-container">
             <button @click="showAll">All</button>
+            <button @click="showNuxt">Nuxt</button>
             <button @click="showAngular">Angular</button>
             <button @click="showJS">Java Script</button>
         </div>
@@ -15,10 +16,9 @@
                     <div class="work-description">
                         <h3>Photo-Gallery</h3>
                         <p>Java Script - based, impressive photo gallery</p>
-                        <a href="https://rinatmadreiter.github.io/Photo-Gallery/" target="_blank"
-                            rel="noopener noreferrer">
+                        <NuxtLink to="https://rinatmadreiter.github.io/Photo-Gallery/">
                             <button>Visit now!</button>
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
@@ -31,9 +31,9 @@
                     <div class="work-description">
                         <h3>Bootstrap Quizapp</h3>
                         <p>Boardgame Quizapp build with javascript and bootstrap</p>
-                        <a href="https://rinatmadreiter.github.io/Quiz-App/" target="_blank" rel="noopener noreferrer">
+                        <NuxtLink to="https://rinatmadreiter.github.io/Quiz-App/">
                             <button>Visit now!</button>
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
@@ -46,10 +46,9 @@
                     <div class="work-description">
                         <h3>El Pollo Loco</h3>
                         <p>Java Script - based jump and run desktop game.</p>
-                        <a href="https://rinatmadreiter.github.io/El_Pollo_Loco/" target="_blank"
-                            rel="noopener noreferrer">
+                        <NuxtLink to="https://rinatmadreiter.github.io/El_Pollo_Loco/">
                             <button>Visit now!</button>
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
@@ -62,14 +61,15 @@
                     <div class="work-description">
                         <h3>Pokedex</h3>
                         <p>Using the RESTful Pokémon API to display pokemon via JavaScript.</p>
-                        <a href="https://rinatmadreiter.github.io/pokedex/" target="_blank" rel="noopener noreferrer">
+                        <NuxtLink to="https://rinatmadreiter.github.io/pokedex/">
                             <button>Visit now!</button>
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
 
-            <div v-show="displayAngular" class="single-work-container">
+
+            <div v-show="displayNuxt" class="single-work-container">
                 <img class="opacity-0"
                     :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
                     src="/img/work/portfolio.png" data-lazy="/img/work/portfolio.png" ref="imgPortfolio" />
@@ -77,7 +77,7 @@
                     <div class="work-description">
                         <h3>Personal Website</h3>
                         <p>Angular - based personal portfolio website.</p>
-                        <a href="#top"><button>Visit now!</button></a>
+                        <a href="/#top"><button>Visit now!</button></a>
                     </div>
                 </div>
             </div>
@@ -90,12 +90,13 @@
                     <div class="work-description">
                         <h3>Language Card Game</h3>
                         <p>Angular - based card game.</p>
-                        <a href="https://ring-of-fire-22675.web.app/" target="_blank" rel="noopener noreferrer">
+                        <NuxtLink to="https://ring-of-fire-22675.web.app/">
                             <button>Visit now!</button>
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </template>
@@ -105,6 +106,7 @@ import { ref, onMounted, nextTick } from 'vue'
 
 const displayJS = ref(true)
 const displayAngular = ref(true)
+const displayNuxt = ref(true)
 const filterClicked = ref(false)
 
 const imgPhotoGallery = ref(null)
@@ -130,61 +132,73 @@ function lazyLoad(target) {
 }
 
 async function observeVisibleImages() {
-  await nextTick() // Wait for DOM updates
-  // Only lazy load visible images according to filters
-  if (displayJS.value) {
-    [imgPhotoGallery, imgQuizApp, imgElPolloLoco, imgPokedex].forEach(ref => {
-      if (ref.value) lazyLoad(ref.value)
-    })
-  }
-  if (displayAngular.value) {
-    [imgPortfolio, imgCardGame].forEach(ref => {
-      if (ref.value) lazyLoad(ref.value)
-    })
-  }
+    await nextTick() // Wait for DOM updates
+    // Only lazy load visible images according to filters
+    if (displayJS.value) {
+        [imgPhotoGallery, imgQuizApp, imgElPolloLoco, imgPokedex].forEach(ref => {
+            if (ref.value) lazyLoad(ref.value)
+        })
+    }
+    if (displayAngular.value) {
+        [imgCardGame].forEach(ref => {
+            if (ref.value) lazyLoad(ref.value)
+        })
+    }
+    if (displayNuxt.value) {
+        [imgPortfolio].forEach(ref => {
+            if (ref.value) lazyLoad(ref.value)
+        })
+    }
+
 }
 
 onMounted(() => {
-  observeVisibleImages()
+    observeVisibleImages()
 })
 
 async function showAll() {
-  displayJS.value = true
-  displayAngular.value = true
-  filterClicked.value = false
-  await nextTick()
-  filterClicked.value = true
-  observeVisibleImages()
+    displayJS.value = true
+    displayAngular.value = true
+    displayNuxt.value = true
+    filterClicked.value = false
+    await nextTick()
+    filterClicked.value = true
+    observeVisibleImages()
 }
 
 async function showJS() {
-  displayJS.value = true
-  displayAngular.value = false
-  filterClicked.value = false
-  await nextTick()
-  filterClicked.value = true
-  observeVisibleImages()
+    displayJS.value = true
+    displayAngular.value = false
+    displayNuxt.value = false
+    filterClicked.value = false
+    await nextTick()
+    filterClicked.value = true
+    observeVisibleImages()
 }
 
 async function showAngular() {
-  displayJS.value = false
-  displayAngular.value = true
-  filterClicked.value = false
-  await nextTick()
-  filterClicked.value = true
-  observeVisibleImages()
+    displayJS.value = false
+    displayAngular.value = true
+    displayNuxt.value = false
+    filterClicked.value = false
+    await nextTick()
+    filterClicked.value = true
+    observeVisibleImages()
+}
+
+async function showNuxt() {
+    displayJS.value = false
+    displayAngular.value = false
+    filterClicked.value = false
+    displayNuxt.value = true
+    await nextTick()
+    filterClicked.value = true
+    observeVisibleImages()
 }
 </script>
 
 
 <style lang="scss" scoped>
-// :host {
-// display: flex;
-// flex-direction: column;
-// align-items: center;
-// justify-content: flex-start;
-// background-color: black;
-// }
 
 .work-heading {
     font-weight: 500;

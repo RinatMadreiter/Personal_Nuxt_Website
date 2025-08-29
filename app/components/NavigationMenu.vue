@@ -1,5 +1,5 @@
 <template>
-    <div class="nav-container">
+    <div class="nav-container" id="top">
         <NuxtLink to="/" @click.stop="menuOpen = false"><img src="/img/logo.png" alt="Logo" class="logo"></NuxtLink>
 
         <!-- Desktop Navigation -->
