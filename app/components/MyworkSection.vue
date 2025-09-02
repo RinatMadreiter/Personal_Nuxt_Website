@@ -16,7 +16,7 @@
                     <div class="work-description">
                         <h3>Photo-Gallery</h3>
                         <p>Java Script - based, impressive photo gallery</p>
-                        <NuxtLink to="https://rinatmadreiter.github.io/Photo-Gallery/">
+                        <NuxtLink target="_blank" to="https://rinatmadreiter.github.io/Photo-Gallery/">
                             <button>Visit now!</button>
                         </NuxtLink>
                     </div>
@@ -31,7 +31,7 @@
                     <div class="work-description">
                         <h3>Bootstrap Quizapp</h3>
                         <p>Boardgame Quizapp build with javascript and bootstrap</p>
-                        <NuxtLink to="https://rinatmadreiter.github.io/Quiz-App/">
+                        <NuxtLink target="_blank" to="https://rinatmadreiter.github.io/Quiz-App/">
                             <button>Visit now!</button>
                         </NuxtLink>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="work-description">
                         <h3>El Pollo Loco</h3>
                         <p>Java Script - based jump and run desktop game.</p>
-                        <NuxtLink to="https://rinatmadreiter.github.io/El_Pollo_Loco/">
+                        <NuxtLink target="_blank" to="https://rinatmadreiter.github.io/El_Pollo_Loco/">
                             <button>Visit now!</button>
                         </NuxtLink>
                     </div>
@@ -61,7 +61,7 @@
                     <div class="work-description">
                         <h3>Pokedex</h3>
                         <p>Using the RESTful Pokémon API to display pokemon via JavaScript.</p>
-                        <NuxtLink to="https://rinatmadreiter.github.io/pokedex/">
+                        <NuxtLink target="_blank" to="https://rinatmadreiter.github.io/pokedex/">
                             <button>Visit now!</button>
                         </NuxtLink>
                     </div>
@@ -90,8 +90,8 @@
                     <div class="work-description">
                         <h3>Language Card Game</h3>
                         <p>Angular - based card game.</p>
-                        <NuxtLink to="https://ring-of-fire-22675.web.app/">
-                            <button>Visit now!</button>
+                        <NuxtLink target="_blank" to="https://github.com/RinatMadreiter/ringoffire">
+                            <button class="angular-button">Visit Repository</button>
                         </NuxtLink>
                     </div>
                 </div>
@@ -271,6 +271,10 @@ button {
         width: 18vh;
         height: fit-content;
     }
+}
+
+.angular-button {
+    height: fit-content;
 }
 
 img {
