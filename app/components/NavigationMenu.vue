@@ -4,9 +4,9 @@
 
         <!-- Desktop Navigation -->
         <div class="link-container hide-mobile">
-            <NuxtLink to="#myWork">PORTFOLIO</NuxtLink>
-            <NuxtLink to="#about">ABOUT</NuxtLink>
-            <NuxtLink to="#contact">CONTACT</NuxtLink>
+            <a href="#myWork">PORTFOLIO</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
         </div>
 
         <!-- Mobile Navigation -->
@@ -21,9 +21,9 @@
                 'd-flex': menuOpen,
                 'd-none': !menuOpen
             }">
-                <NuxtLink to="#myWork" @click="toggleMenu">PORTFOLIO</NuxtLink>
-                <NuxtLink to="#about" @click="toggleMenu">ABOUT</NuxtLink>
-                <NuxtLink to="#contact" @click="toggleMenu">CONTACT</NuxtLink>
+                <a href="#myWork" @click="toggleMenu">PORTFOLIO</a>
+                <a href="#about" @click="toggleMenu">ABOUT</a>
+                <a href="#contact" @click="toggleMenu">CONTACT</a>
             </div>
         </div>
     </div>

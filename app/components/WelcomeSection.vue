@@ -5,7 +5,7 @@ import LazyImage from './LazyImage.vue';
 </script>
 
 <template>
-    <div class="main">
+    <div class="main" id="top">
         <div class="greeting-contact-container">
             <div class="dynamic-typing">
                 <div class="typing-demo">

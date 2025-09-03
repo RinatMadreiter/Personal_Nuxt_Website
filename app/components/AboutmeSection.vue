@@ -1,5 +1,5 @@
 <template>
-    <div class="about-section">
+    <div class="about-section" id="about">
         <div class="upper-container">
             <LazyImage :imgPath="aboutMeImgSrcPath[0].path" />
             <div class="short-description">

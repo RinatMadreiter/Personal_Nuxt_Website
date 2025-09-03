@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="work-heading">My Work</h1>
+        <h1 class="work-heading" id="myWork">My Work</h1>
         <div class="btn-container">
             <button @click="showAll">All</button>
             <button @click="showNuxt">Nuxt</button>
