@@ -36,7 +36,7 @@ import LazyImage from './LazyImage.vue';
 const works = [
     {
         id: 'photogallery',
-        imgPath: '/img/work/photogallery.png',
+        imgPath: '/img/work/photogallery.webp',
         title: 'Photo-Gallery',
         description: 'Java Script - based, impressive photo gallery',
         url: 'https://rinatmadreiter.github.io/Photo-Gallery/',
@@ -68,7 +68,7 @@ const works = [
     },
     {
         id: 'portfolio',
-        imgPath: '/img/work/portfolio.png',
+        imgPath: '/img/work/portfolio.webp',
         title: 'Personal Website',
         description: 'Nuxt - based personal portfolio website.',
         url: '/#top',
