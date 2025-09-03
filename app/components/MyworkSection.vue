@@ -14,11 +14,6 @@
                     <div class="work-description">
                         <h3>{{ work.title }}</h3>
                         <p>{{ work.description }}</p>
-                        <!-- <NuxtLink :target="work.categories.includes('nuxt') ? '_self' : '_blank'" :to="work.url">
-                            <button :class="work.categories.includes('angular') ? 'angular-button' : ''">
-                                {{ getButtonText(work) }}
-                            </button>
-                        </NuxtLink> -->
                         <a :href="work.url" :target="work.categories.includes('nuxt') ? '_self' : '_blank'"
                             rel="noopener noreferrer">
                             <button :class="work.categories.includes('angular') ? 'angular-button' : ''">
@@ -35,7 +30,7 @@
 
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, nextTick } from 'vue'
 import LazyImage from './LazyImage.vue';
 
 const works = [
@@ -130,7 +125,6 @@ function getButtonText(work) {
         ? work.buttonText
         : 'Visit now!';
 }
-
 </script>
 
 
