@@ -164,6 +164,10 @@ h1 {
     /* needed for lazyload animation */
     .skill :deep(.opacity-0) {
         transform: translateX(200%);
+
+          @media(max-width: 720px) {
+            transform: translateX(100%);
+        }
     }
 
     .skill :deep(.fade) {

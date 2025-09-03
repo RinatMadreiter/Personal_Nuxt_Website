@@ -14,11 +14,18 @@
                     <div class="work-description">
                         <h3>{{ work.title }}</h3>
                         <p>{{ work.description }}</p>
-                        <NuxtLink target="_blank" :to="work.url">
+                        <!-- <NuxtLink :target="work.categories.includes('nuxt') ? '_self' : '_blank'" :to="work.url">
                             <button :class="work.categories.includes('angular') ? 'angular-button' : ''">
-                                Visit now!
+                                {{ getButtonText(work) }}
                             </button>
-                        </NuxtLink>
+                        </NuxtLink> -->
+                        <a :href="work.url" :target="work.categories.includes('nuxt') ? '_self' : '_blank'"
+                            rel="noopener noreferrer">
+                            <button :class="work.categories.includes('angular') ? 'angular-button' : ''">
+                                {{ getButtonText(work) }}
+                            </button>
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -68,17 +75,18 @@ const works = [
         id: 'portfolio',
         imgPath: '/img/work/portfolio.png',
         title: 'Personal Website',
-        description: 'Angular - based personal portfolio website.',
+        description: 'Nuxt - based personal portfolio website.',
         url: '/#top',
         categories: ['nuxt']
     },
     {
         id: 'cardgame',
-        imgPath: '/img/work/cardgame.png',
+        imgPath: '/img/work/cardgame.webp',
         title: 'Language Card Game',
         description: 'Angular - based card game.',
         url: 'https://github.com/RinatMadreiter/ringoffire',
-        categories: ['angular']
+        categories: ['angular'],
+        buttonText: 'Visit Repository'
     }
 ];
 
@@ -115,6 +123,12 @@ async function triggerFilter() {
     await nextTick();
     filterClicked.value = true;
     await nextTick();
+}
+
+function getButtonText(work) {
+    return work.categories.includes('angular') && work.buttonText
+        ? work.buttonText
+        : 'Visit now!';
 }
 
 </script>
@@ -312,7 +326,6 @@ img {
     button {
         @media(max-width: 420px) {
             font-size: 12px;
-            height: 30px;
             width: 80px;
             margin-bottom: 0;
         }

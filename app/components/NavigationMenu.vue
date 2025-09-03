@@ -1,6 +1,6 @@
 <template>
     <div class="nav-container" id="top">
-        <NuxtLink to="/" @click.stop="menuOpen = false"><img src="/img/logo.png" alt="Logo" class="logo"></NuxtLink>
+        <a href="#top" @click.stop="menuOpen = false"><img src="/img/logo.png" alt="Logo"></a>
 
         <!-- Desktop Navigation -->
         <div class="link-container hide-mobile">
