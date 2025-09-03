@@ -9,7 +9,7 @@
         </div>
         <div class="work-collection">
             <div v-for="work in worksToShow" :key="work.id" class="single-work-container">
-                <LazyImage :imgPath="work.imgPath" />
+                <LoadedLazyImage :imgPath="work.imgPath" />
                 <div class="middle">
                     <div class="work-description">
                         <h3>{{ work.title }}</h3>
@@ -31,7 +31,7 @@
 
 <script setup>
 import { ref, nextTick } from 'vue'
-import LazyImage from './LazyImage.vue';
+import LoadedLazyImage from './LoadedLazyImage.vue';
 
 const works = [
     {

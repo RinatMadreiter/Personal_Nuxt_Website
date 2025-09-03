@@ -1,6 +1,6 @@
 <script setup>
 
-import LazyImage from './LazyImage.vue';
+import LoadedLazyImage from './LoadedLazyImage.vue';
 
 const skillsImgSrcPath = [
     { name: 'Nuxt', path: '/img/skills/nuxt.svg' },
@@ -25,7 +25,7 @@ const skillsImgRefs = skillsImgSrcPath.map(() => useLazyFadeImg());
         <div class="skills-container">
             <div class="skill" v-for="(skill, index) in skillsImgSrcPath" :key="skill.name">
                 {{ skill.name }}
-                <LazyImage :img-path="skill.path" />
+                <LoadedLazyImage :img-path="skill.path" />
             </div>
         </div>
     </section>

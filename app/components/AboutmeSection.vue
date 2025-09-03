@@ -1,7 +1,7 @@
 <template>
     <div class="about-section" id="about">
         <div class="upper-container">
-            <LazyImage :imgPath="aboutMeImgSrcPath[0].path" />
+            <LoadedLazyImage :imgPath="aboutMeImgSrcPath[0].path" />
             <div class="short-description">
                 <h1>About me</h1>
                 <p>"I'm a goal oriented developer who loves to create web applications with proven web technologies and
@@ -11,7 +11,7 @@
 
         <div class="journey-section">
             <div class="journey-sub-section" v-for="item in journeyItems" :key="item.imgPath">
-                <LazyImage :imgPath="item.imgPath" />
+                <LoadedLazyImage :imgPath="item.imgPath" />
                 <h4>{{ item.title }}</h4>
                 <p>{{ item.description }}</p>
             </div>
@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-import LazyImage from './LazyImage.vue';
+import LoadedLazyImage from './LoadedLazyImage.vue';
 
 const aboutMeImgSrcPath = [
     { name: 'Profile', path: '/img/profile4.jpeg' },

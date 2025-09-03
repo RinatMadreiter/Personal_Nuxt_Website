@@ -1,6 +1,6 @@
 <script setup>
 import profileImage from '/img/components/welcomeSection/profile.jpg'
-import LazyImage from './LazyImage.vue';
+import LoadedLazyImage from './LoadedLazyImage.vue';
 
 </script>
 
@@ -21,7 +21,7 @@ import LazyImage from './LazyImage.vue';
 
         </div>
 
-        <LazyImage :imgPath="profileImage" />
+        <LoadedLazyImage :imgPath="profileImage" />
     </div>
 </template>
 
