@@ -1,6 +1,6 @@
 <script setup>
 
-import { useLazyFadeImg } from '@/composables/useLazyFadeImg';
+import LazyImage from './LazyImage.vue';
 
 const skillsImgSrcPath = [
     { name: 'Nuxt', path: '/img/skills/nuxt.svg' },
@@ -25,7 +25,7 @@ const skillsImgRefs = skillsImgSrcPath.map(() => useLazyFadeImg());
         <div class="skills-container">
             <div class="skill" v-for="(skill, index) in skillsImgSrcPath" :key="skill.name">
                 {{ skill.name }}
-                <img class="opacity-0" :data-lazy="skill.path" :ref="el => skillsImgRefs[index].lazyImg.value = el" />
+                <LazyImage :img-path="skill.path" />
             </div>
         </div>
     </section>
@@ -162,30 +162,14 @@ h1 {
     }
 
     /* needed for lazyload animation */
-    .opacity-0 {
+    .skill :deep(.opacity-0) {
         transform: translateX(200%);
-        opacity: 0;
-        transition: all 1500ms;
-
-        @media(max-width: 720px) {
-            transform: translateX(15%);
-        }
-
-        @media(min-width: 720px) and (max-width: 1200px) {
-            transform: translateX(30%);
-        }
-
-        @media(max-width: 370px) {
-            transform: translateX(5%);
-        }
-
     }
 
-    .fade {
+    .skill :deep(.fade) {
         transform: translateX(0);
-        opacity: 1;
-        transition: all 1500ms;
     }
+
 
     .mt-16 {
 

@@ -4,202 +4,123 @@
         <div class="btn-container">
             <button @click="showAll">All</button>
             <button @click="showNuxt">Nuxt</button>
-            <button @click="showAngular">Angular</button>
             <button @click="showJS">Java Script</button>
+            <button @click="showAngular">Angular</button>
         </div>
         <div class="work-collection">
-            <div v-show="displayJS" class="single-work-container">
-                <img class="opacity-0"
-                    :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
-                    src="/img/work/photogallery.png" data-lazy="/img/work/photogallery.png" ref="imgPhotoGallery" />
+            <div v-for="work in worksToShow" :key="work.id" class="single-work-container">
+                <LazyImage :imgPath="work.imgPath" />
                 <div class="middle">
                     <div class="work-description">
-                        <h3>Photo-Gallery</h3>
-                        <p>Java Script - based, impressive photo gallery</p>
-                        <NuxtLink target="_blank" to="https://rinatmadreiter.github.io/Photo-Gallery/">
-                            <button>Visit now!</button>
+                        <h3>{{ work.title }}</h3>
+                        <p>{{ work.description }}</p>
+                        <NuxtLink target="_blank" :to="work.url">
+                            <button :class="work.categories.includes('angular') ? 'angular-button' : ''">
+                                Visit now!
+                            </button>
                         </NuxtLink>
                     </div>
                 </div>
             </div>
-
-            <div v-show="displayJS" class="single-work-container">
-                <img class="opacity-0"
-                    :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
-                    src="/img/work/quizapp.png" data-lazy="/img/work/quizapp.png" ref="imgQuizApp" />
-                <div class="middle">
-                    <div class="work-description">
-                        <h3>Bootstrap Quizapp</h3>
-                        <p>Boardgame Quizapp build with javascript and bootstrap</p>
-                        <NuxtLink target="_blank" to="https://rinatmadreiter.github.io/Quiz-App/">
-                            <button>Visit now!</button>
-                        </NuxtLink>
-                    </div>
-                </div>
-            </div>
-
-            <div v-show="displayJS" class="single-work-container">
-                <img id="elpolloloco" class="opacity-0"
-                    :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
-                    src="/img/work/elpolloloco.png" data-lazy="/img/work/elpolloloco.png" ref="imgElPolloLoco" />
-                <div class="middle">
-                    <div class="work-description">
-                        <h3>El Pollo Loco</h3>
-                        <p>Java Script - based jump and run desktop game.</p>
-                        <NuxtLink target="_blank" to="https://rinatmadreiter.github.io/El_Pollo_Loco/">
-                            <button>Visit now!</button>
-                        </NuxtLink>
-                    </div>
-                </div>
-            </div>
-
-            <div v-show="displayJS" class="single-work-container">
-                <img class="opacity-0"
-                    :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
-                    src="/img/work/pokedex.png" data-lazy="/img/work/pokedex.png" ref="imgPokedex" />
-                <div class="middle">
-                    <div class="work-description">
-                        <h3>Pokedex</h3>
-                        <p>Using the RESTful Pokémon API to display pokemon via JavaScript.</p>
-                        <NuxtLink target="_blank" to="https://rinatmadreiter.github.io/pokedex/">
-                            <button>Visit now!</button>
-                        </NuxtLink>
-                    </div>
-                </div>
-            </div>
-
-
-            <div v-show="displayNuxt" class="single-work-container">
-                <img class="opacity-0"
-                    :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
-                    src="/img/work/portfolio.png" data-lazy="/img/work/portfolio.png" ref="imgPortfolio" />
-                <div class="middle">
-                    <div class="work-description">
-                        <h3>Personal Website</h3>
-                        <p>Angular - based personal portfolio website.</p>
-                        <a href="/#top"><button>Visit now!</button></a>
-                    </div>
-                </div>
-            </div>
-
-            <div v-show="displayAngular" class="single-work-container">
-                <img class="opacity-0"
-                    :class="{ 'opacity-0': !filterClicked, 'slide-from-right-animation': filterClicked }"
-                    src="/img/work/cardgame.png" data-lazy="/img/work/cardgame.png" ref="imgCardGame" />
-                <div class="middle">
-                    <div class="work-description">
-                        <h3>Language Card Game</h3>
-                        <p>Angular - based card game.</p>
-                        <NuxtLink target="_blank" to="https://github.com/RinatMadreiter/ringoffire">
-                            <button class="angular-button">Visit Repository</button>
-                        </NuxtLink>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </template>
 
+
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
+import LazyImage from './LazyImage.vue';
 
-const displayJS = ref(true)
-const displayAngular = ref(true)
-const displayNuxt = ref(true)
-const filterClicked = ref(false)
-
-const imgPhotoGallery = ref(null)
-const imgQuizApp = ref(null)
-const imgElPolloLoco = ref(null)
-const imgPokedex = ref(null)
-const imgPortfolio = ref(null)
-const imgCardGame = ref(null)
-
-function lazyLoad(target) {
-    const io = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target
-                const src = img.getAttribute('data-lazy')
-                img.setAttribute('src', src)
-                img.classList.add('fade')
-                observer.disconnect()
-            }
-        })
-    })
-    io.observe(target)
-}
-
-async function observeVisibleImages() {
-    await nextTick() // Wait for DOM updates
-    // Only lazy load visible images according to filters
-    if (displayJS.value) {
-        [imgPhotoGallery, imgQuizApp, imgElPolloLoco, imgPokedex].forEach(ref => {
-            if (ref.value) lazyLoad(ref.value)
-        })
+const works = [
+    {
+        id: 'photogallery',
+        imgPath: '/img/work/photogallery.png',
+        title: 'Photo-Gallery',
+        description: 'Java Script - based, impressive photo gallery',
+        url: 'https://rinatmadreiter.github.io/Photo-Gallery/',
+        categories: ['js']
+    },
+    {
+        id: 'quizapp',
+        imgPath: '/img/work/quizapp.png',
+        title: 'Bootstrap Quizapp',
+        description: 'Boardgame Quizapp build with javascript and bootstrap',
+        url: 'https://rinatmadreiter.github.io/Quiz-App/',
+        categories: ['js']
+    },
+    {
+        id: 'elpolloloco',
+        imgPath: '/img/work/elpolloloco.png',
+        title: 'El Pollo Loco',
+        description: 'Java Script - based jump and run desktop game.',
+        url: 'https://rinatmadreiter.github.io/El_Pollo_Loco/',
+        categories: ['js']
+    },
+    {
+        id: 'pokedex',
+        imgPath: '/img/work/pokedex.png',
+        title: 'Pokedex',
+        description: 'Using the RESTful Pokémon API to display pokemon via JavaScript.',
+        url: 'https://rinatmadreiter.github.io/pokedex/',
+        categories: ['js']
+    },
+    {
+        id: 'portfolio',
+        imgPath: '/img/work/portfolio.png',
+        title: 'Personal Website',
+        description: 'Angular - based personal portfolio website.',
+        url: '/#top',
+        categories: ['nuxt']
+    },
+    {
+        id: 'cardgame',
+        imgPath: '/img/work/cardgame.png',
+        title: 'Language Card Game',
+        description: 'Angular - based card game.',
+        url: 'https://github.com/RinatMadreiter/ringoffire',
+        categories: ['angular']
     }
-    if (displayAngular.value) {
-        [imgCardGame].forEach(ref => {
-            if (ref.value) lazyLoad(ref.value)
-        })
-    }
-    if (displayNuxt.value) {
-        [imgPortfolio].forEach(ref => {
-            if (ref.value) lazyLoad(ref.value)
-        })
-    }
+];
 
-}
+const filterClicked = ref(false);
+const selectedFilters = ref(new Set(['js', 'angular', 'nuxt'])); // all selected initially
 
-onMounted(() => {
-    observeVisibleImages()
-})
+const worksToShow = computed(() =>
+    works.filter(work => work.categories.some(cat => selectedFilters.value.has(cat)))
+);
+
 
 async function showAll() {
-    displayJS.value = true
-    displayAngular.value = true
-    displayNuxt.value = true
-    filterClicked.value = false
-    await nextTick()
-    filterClicked.value = true
-    observeVisibleImages()
+    selectedFilters.value = new Set(['js', 'angular', 'nuxt']);
+    await triggerFilter();
 }
 
 async function showJS() {
-    displayJS.value = true
-    displayAngular.value = false
-    displayNuxt.value = false
-    filterClicked.value = false
-    await nextTick()
-    filterClicked.value = true
-    observeVisibleImages()
+    selectedFilters.value = new Set(['js']);
+    await triggerFilter();
 }
 
 async function showAngular() {
-    displayJS.value = false
-    displayAngular.value = true
-    displayNuxt.value = false
-    filterClicked.value = false
-    await nextTick()
-    filterClicked.value = true
-    observeVisibleImages()
+    selectedFilters.value = new Set(['angular']);
+    await triggerFilter();
 }
 
 async function showNuxt() {
-    displayJS.value = false
-    displayAngular.value = false
-    filterClicked.value = false
-    displayNuxt.value = true
-    await nextTick()
-    filterClicked.value = true
-    observeVisibleImages()
+    selectedFilters.value = new Set(['nuxt']);
+    await triggerFilter();
 }
+
+async function triggerFilter() {
+    filterClicked.value = false;
+    await nextTick();
+    filterClicked.value = true;
+    await nextTick();
+}
+
 </script>
 
 
 <style lang="scss" scoped>
-
 .work-heading {
     font-weight: 500;
     font-size: 36px;
@@ -296,46 +217,6 @@ img {
     }
 
 }
-
-/* needed for lazyload animation */
-.opacity-0 {
-    transform: translateX(50%);
-    opacity: 0;
-    transition: all 1500ms;
-
-    @media(max-width: 1200px) {
-        transform: translateX(15%);
-    }
-
-    @media(max-width: 370px) {
-        transform: translateX(5%);
-    }
-}
-
-.fade {
-    transform: translateX(0);
-    opacity: 1;
-    transition: all 1500ms;
-}
-
-.slide-from-right-animation {
-    animation: slide-from-right ease-in-out 1000ms;
-    transition: all 1500ms;
-}
-
-@keyframes slide-from-right {
-    0% {
-        transform: translateX(5%);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
-
-
 
 .work-collection {
     max-width: 100%;

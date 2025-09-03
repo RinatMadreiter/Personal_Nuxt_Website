@@ -6,6 +6,7 @@
     </main>
     <SkillsSection />
     <MyworkSection />
+    <AboutmeSection />
     <ContactSection />
   </div>
 </template>

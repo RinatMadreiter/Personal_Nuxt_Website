@@ -1,8 +1,6 @@
 <script setup>
 import profileImage from '/img/components/welcomeSection/profile.jpg'
-import { useLazyFadeImg } from '@/composables/useLazyFadeImg';
-
-const { lazyImg } = useLazyFadeImg();
+import LazyImage from './LazyImage.vue';
 
 </script>
 
@@ -23,7 +21,7 @@ const { lazyImg } = useLazyFadeImg();
 
         </div>
 
-        <img :data-lazy="profileImage" src="" ref="lazyImg" class="opacity-0" />
+        <LazyImage :imgPath="profileImage" />
     </div>
 </template>
 
@@ -79,7 +77,7 @@ const { lazyImg } = useLazyFadeImg();
             width: 260px;
             height: fit-content;
         }
-        
+
         @media only screen and (orientation: landscape) and (max-width: 950px) and (max-height: 399px) {
             width: 180px;
             height: fit-content;
@@ -120,18 +118,9 @@ const { lazyImg } = useLazyFadeImg();
     }
 }
 
-/* needed for lazyload animation */
-.opacity-0 {
-    transform: translateX(50%);
-    opacity: 0;
+// /* needed for lazyload animation */
+.main :deep(.opacity-0) {
     transition: transform 3s, opacity 3s;
-}
-
-/* needed for lazyload animation */
-.fade {
-    transform: translateX(0%);
-    opacity: 1;
-    transition: opacity 3s, transform 3s;
 }
 
 .primary {
