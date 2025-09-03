@@ -17,7 +17,7 @@ import LoadedLazyImage from './LoadedLazyImage.vue';
                 </div>
             </div>
 
-            <a href="#contact"><button>Contact Me</button></a>
+            <a href="#contact-me"><button>Contact Me</button></a>
 
         </div>
 
