@@ -8,6 +8,7 @@
     <MyworkSection />
     <AboutmeSection />
     <ContactSection />
+    <Footer />
   </div>
 </template>
 
@@ -15,5 +16,4 @@
 main {
   height: 100vh;
 }
-
 </style>
