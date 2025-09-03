@@ -227,7 +227,7 @@ button {
 
         @media(min-width: 721px) and (max-width: 1000px) {
             text-decoration: none;
-            margin-top: 164px;
+            margin-top: 100px;
             display: flex;
             justify-content: center;
         }
@@ -370,8 +370,16 @@ button {
         margin-top: 32px;
     }
 
-    @media(max-width: 1000px) and (min-width: 721px) {
+    @media(max-width: 850px) and (min-width: 721px) {
         font-size: 27px;
+    }
+
+    @media(max-width: 1000px) and (min-width: 851px) {
+        font-size: 38px;
+    }
+
+    @media(max-width: 1200px) and (min-width: 1000px) {
+        font-size: 45px;
     }
 
     @media(min-width: 721px) and (max-width: 1600px) and (min-height: 701px) and (max-height: 900px) {
@@ -422,8 +430,16 @@ button {
         margin-top: 32px;
     }
 
-    @media(max-width: 1000px) and (min-width: 720px) {
+    @media(max-width: 850px) and (min-width: 721px) {
         font-size: 27px;
+    }
+
+    @media(max-width: 1000px) and (min-width: 851px) {
+        font-size: 38px;
+    }
+
+    @media(max-width: 1200px) and (min-width: 1000px) {
+        font-size: 45px;
     }
 
     @media(min-width: 721px) and (max-width: 1600px) and (min-height: 701px) and (max-height: 900px) {
