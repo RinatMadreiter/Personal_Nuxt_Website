@@ -1,6 +1,9 @@
 <script setup>
 import profileImage from '/img/components/welcomeSection/profile.jpg'
 import LoadedLazyImage from './LoadedLazyImage.vue';
+import { useScrollTwice } from '~/composables/useScrollTwice.js'
+
+const { scrollTwice } = useScrollTwice(410)
 
 </script>
 
@@ -17,7 +20,7 @@ import LoadedLazyImage from './LoadedLazyImage.vue';
                 </div>
             </div>
 
-            <a href="#contact-me"><button>Contact Me</button></a>
+            <a @click="scrollTwice('contact-me')"><button>Contact Me</button></a>
 
         </div>
 

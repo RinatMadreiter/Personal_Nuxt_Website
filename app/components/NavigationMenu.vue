@@ -5,8 +5,8 @@
         <!-- Desktop Navigation -->
         <div class="link-container hide-mobile">
             <a href="#myWork">PORTFOLIO</a>
-            <a href="#about">ABOUT</a>
-            <a href="#contact">CONTACT</a>
+            <a @click="scrollTwice('about')">ABOUT</a>
+            <a @click="scrollTwice('contact-me')">CONTACT</a>
         </div>
 
         <!-- Mobile Navigation -->
@@ -22,8 +22,8 @@
                 'd-none': !menuOpen
             }">
                 <a href="#myWork" @click="toggleMenu">PORTFOLIO</a>
-                <a href="#about" @click="toggleMenu">ABOUT</a>
-                <a href="#contact" @click="toggleMenu">CONTACT</a>
+                <a @click="handleMobileNavClick('about')">ABOUT</a>
+                <a @click="handleMobileNavClick('contact-me')">CONTACT</a>
             </div>
         </div>
     </div>
@@ -31,11 +31,19 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useScrollTwice } from '~/composables/useScrollTwice.js'
+
+const { scrollTwice } = useScrollTwice(500)
 
 const menuOpen = ref(false)
 
 const toggleMenu = () => {
     menuOpen.value = !menuOpen.value
+}
+
+function handleMobileNavClick(targetId) {
+    toggleMenu()
+    scrollTwice(targetId)
 }
 </script>
 
@@ -257,7 +265,8 @@ img {
             transform: translate(100%, -100%);
         }
 
-        100% {          opacity: 1;
+        100% {
+            opacity: 1;
             transform: translateX(8vw);
         }
     }
