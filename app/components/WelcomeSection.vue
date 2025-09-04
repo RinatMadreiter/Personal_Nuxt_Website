@@ -3,7 +3,7 @@ import profileImage from '/img/components/welcomeSection/profile.jpg'
 import LoadedLazyImage from './LoadedLazyImage.vue';
 import { useScrollTwice } from '~/composables/useScrollTwice.js'
 
-const { scrollTwice } = useScrollTwice(410)
+const { scrollTwice } = useScrollTwice(470)
 
 </script>
 

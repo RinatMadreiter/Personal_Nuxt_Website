@@ -33,7 +33,7 @@
 import { ref } from 'vue'
 import { useScrollTwice } from '~/composables/useScrollTwice.js'
 
-const { scrollTwice } = useScrollTwice(500)
+const { scrollTwice } = useScrollTwice(470)
 
 const menuOpen = ref(false)
 
