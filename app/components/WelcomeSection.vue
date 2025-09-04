@@ -90,6 +90,10 @@ const { scrollTwice } = useScrollTwice(470)
             height: fit-content;
         }
 
+        @media(min-width: 1400px) {
+            padding: 64px 0;
+        }
+
         @media(min-width: 721px) and (max-width: 1600px) and (min-height: 701px) and (max-height: 900px) {
             width: 270px;
             height: fit-content;
@@ -173,12 +177,14 @@ button {
         height: auto;
         margin-top: 48px;
         height: fit-content;
+        padding: 12px 0;
     }
 
     @media(max-width: 2600px) and (min-width: 2000px) {
         font-size: 70px;
         width: 700px;
         height: auto;
+        padding: 24px 0;
     }
 
     @media(min-width: 2601px) and (min-height: 2000px) {
