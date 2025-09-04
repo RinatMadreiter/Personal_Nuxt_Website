@@ -8,6 +8,7 @@
     <MyworkSection />
     <AboutmeSection />
     <ContactSection />
+    <ScrollToTop />
     <Footer />
   </div>
 </template>

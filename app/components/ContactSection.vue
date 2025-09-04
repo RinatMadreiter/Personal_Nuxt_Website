@@ -1,4 +1,5 @@
 <script setup>
+
 useHead({
   script: [
     { src: '/js/formbricks-init.js' }
