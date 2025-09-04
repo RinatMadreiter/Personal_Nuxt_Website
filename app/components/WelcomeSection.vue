@@ -57,7 +57,6 @@ import LoadedLazyImage from './LoadedLazyImage.vue';
         margin-left: 8vw;
     }
 
-
     img {
         width: 400px;
         border-radius: 50%;
@@ -158,13 +157,19 @@ button {
         height: auto;
     }
 
+    @media(max-width: 1800px) and (min-width: 1286px) {
+        font-size: 40px;
+        width: 400px;
+        height: auto;
+        padding: 2vh;
+    }
+
     @media(max-width: 2000px) and (min-width: 1800px) {
         font-size: 50px;
         width: 400px;
         height: auto;
-        margin-top: 20vh;
+        margin-top: 48px;
         height: fit-content;
-
     }
 
     @media(max-width: 2600px) and (min-width: 2000px) {

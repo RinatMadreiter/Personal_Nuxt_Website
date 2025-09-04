@@ -9,7 +9,7 @@ useHead({
 <template>
   <section>
     <button id="contact-me">
-      Contact Me
+      Send a message
     </button>
   </section>
 </template>
@@ -36,23 +36,22 @@ button {
   cursor: pointer;
   animation: 225ms ease-in-out;
 
+  @media(max-width: 720px) {
+    width: 300px;
+    font-size: 30px;
+  }
+  
+  @media(max-width: 1000px) and (min-width: 721px) {
+    width: 350px;
+    font-size: 35px;
+  }
+ 
+
   @media (hover: hover) {
     &:hover {
       background-color: #2DFCD8;
       color: black;
     }
-  }
-
-  @media (min-width: 720px) and (max-width: 1286px) {
-    margin-bottom: 200px;
-  }
-
-  @media(min-width: 1920px) and (min-height: 1080px) {
-    font-size: 2vh;
-    line-height: 2.5vh;
-    width: 17vh;
-    height: 6vh;
-    border: 0.5vh solid #2DFCD8;
   }
 }
 </style>

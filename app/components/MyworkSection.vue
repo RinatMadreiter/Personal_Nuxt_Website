@@ -197,7 +197,8 @@ button {
 
     @media(min-width: 1920px) and (min-height: 1080px) {
         font-size: 3vh;
-        width: 18vh;
+        width: 19vh;
+        padding: 1vh;
         height: fit-content;
     }
 }
