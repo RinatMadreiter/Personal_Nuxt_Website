@@ -69,7 +69,6 @@ img {
 
 .link-container {
 
-
     a {
         text-decoration: none;
         color: white;
