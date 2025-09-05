@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/styles/main.scss'],
   app: {
+    baseURL: '/',
     head: {
       title: 'Rinat Madreiter',
       meta: [
@@ -12,5 +13,5 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ]
     }
-  }
+  },
 })
