@@ -2,7 +2,11 @@
 
 useHead({
   script: [
-    { src: '/js/formbricks-init.js' }
+    {
+      src: '/js/formbricks-init.js',
+      tagPosition: 'bodyClose',
+      defer: true
+    }
   ]
 })
 </script>
@@ -41,12 +45,12 @@ button {
     width: 300px;
     font-size: 30px;
   }
-  
+
   @media(max-width: 1000px) and (min-width: 721px) {
     width: 350px;
     font-size: 35px;
   }
- 
+
 
   @media (hover: hover) {
     &:hover {

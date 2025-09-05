@@ -24,7 +24,7 @@ const { scrollTwice } = useScrollTwice(470)
 
         </div>
 
-        <LoadedLazyImage :imgPath="profileImage" />
+        <LoadedLazyImage :imgPath="profileImage" rel="preload" fetchpriority="high" />
     </div>
 </template>
 
@@ -62,6 +62,7 @@ const { scrollTwice } = useScrollTwice(470)
 
     img {
         width: 400px;
+        height: fit-content;
         border-radius: 50%;
         object-fit: cover;
 
