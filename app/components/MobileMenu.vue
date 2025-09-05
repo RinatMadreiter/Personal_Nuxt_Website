@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { ref, watch, defineProps, defineEmits } from 'vue'
+import { ref, watch, defineProps } from 'vue'
 import { useScrollTwice } from '~/composables/useScrollTwice.js'
 
 const props = defineProps({
