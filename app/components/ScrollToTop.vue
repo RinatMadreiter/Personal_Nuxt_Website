@@ -48,12 +48,15 @@ onUnmounted(() => {
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.scroll-to-top:hover {
-    background: linear-gradient(135deg, #FA2759 0%, #2DFCD8 100%);
-    transform: scale(1.1);
-    box-shadow: 0 6px 15px rgba(45, 252, 216, 0.7);
+@media (hover: hover) {
+    .scroll-to-top:hover {
+        background: linear-gradient(135deg, #FA2759 0%, #2DFCD8 100%);
+        transform: scale(1.1);
+        box-shadow: 0 6px 15px rgba(45, 252, 216, 0.7);
+    }
 }
 
 .scroll-to-top:focus {

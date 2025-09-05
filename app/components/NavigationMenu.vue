@@ -10,49 +10,25 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div class="mobile-menu-container">
-            <div class="animated-burger burger burger-rotate hide-desktop" :class="{ 'open': menuOpen }"
-                @click="toggleMenu">
-                <div class="burger-lines"></div>
-            </div>
-
-            <div id="mobileMenu" class="mobile-menu-links" :class="{
-                'animate-open-menu': menuOpen,
-                'd-flex': menuOpen,
-                'd-none': !menuOpen
-            }">
-                <a href="#myWork" @click="toggleMenu">PORTFOLIO</a>
-                <a @click="handleMobileNavClick('about')">ABOUT</a>
-                <a @click="handleMobileNavClick('contact-me')">CONTACT</a>
-            </div>
-        </div>
+        <MobileMenu v-model="menuOpen" />
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { useScrollTwice } from '~/composables/useScrollTwice.js'
+import MobileMenu from '~/components/MobileMenu.vue'
 
-const { scrollTwice } = useScrollTwice(470)
-
+const { scrollTwice } = useScrollTwice(490)
 const menuOpen = ref(false)
-
-const toggleMenu = () => {
-    menuOpen.value = !menuOpen.value
-}
-
-function handleMobileNavClick(targetId) {
-    toggleMenu()
-    scrollTwice(targetId)
-}
 </script>
 
 <style lang="scss" scoped>
 .nav-container {
     display: flex;
     justify-content: space-between;
-    margin-right: 14vw;
-    margin-left: 14vw;
+    margin-right: 12vw;
+    margin-left: 12vw;
     padding-top: 40px;
     font-size: 16px;
     height: 12vh;
@@ -110,165 +86,6 @@ img {
 
     @media (max-width: 720px) {
         display: none;
-    }
-}
-
-.hide-desktop {
-    @media (min-width: 721px) {
-        display: none;
-    }
-}
-
-.d-flex {
-    display: flex;
-}
-
-.d-none {
-    display: none;
-}
-
-.animated-burger {
-    margin-bottom: 32px;
-}
-
-.burger.burger-rotate {
-    .burger-lines {
-
-        &:after,
-        &:before {
-            width: 2em;
-        }
-
-        &,
-        &:after,
-        &:before {
-            transition: all .2s;
-        }
-    }
-
-    &.open {
-        transform: rotate(180deg);
-
-        .burger-lines {
-            & {
-                background-color: rgb(0, 0, 0);
-            }
-
-            &:before,
-            &:after {
-                left: 0.5em;
-                top: 0px;
-            }
-
-            &:before {
-                transform: rotate(135deg);
-            }
-
-            &:after {
-                transform: rotate(-135deg);
-            }
-        }
-    }
-}
-
-
-.mobile-menu-links {
-    flex-direction: column;
-    background-color: rgba(250, 39, 89, 0.5);
-    background-color: #888;
-    z-index: 10;
-    border-radius: 8px;
-    padding: 16px;
-    width: 120px;
-    transform: translateX(14vw);
-
-
-    @media (max-width: 300px) {
-        transform: translateX(8vw);
-        padding-left: 0;
-        padding-right: 0;
-        align-items: center;
-    }
-
-    @media (max-width: 720px) {
-        transform: translateX(8vw);
-    }
-
-    @media (min-width: 721px) {
-        display: none;
-    }
-
-
-    a {
-        text-align: right;
-        color: white;
-        text-decoration: none;
-        font-size: 22px;
-        font-family: monospace;
-        font-weight: 900;
-
-        &:nth-child(2) {
-            margin-top: 22px;
-            margin-bottom: 22px;
-        }
-
-        &:hover {
-            color: #FA2759;
-            cursor: pointer;
-        }
-
-        @media (max-width: 300px) {
-            text-align: left;
-        }
-
-        @media (max-width: 720px) {
-            text-align: right;
-        }
-
-    }
-}
-
-.mobile-menu-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-    height: fit-content;
-
-    @media (min-width: 721px) {
-        display: none;
-    }
-}
-
-.animate-open-menu {
-    animation: fly-from-right 1s;
-}
-
-
-@keyframes fly-from-right {
-    0% {
-        opacity: 0;
-        transform: translate(100%, -100%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(14vw);
-    }
-}
-
-@media (max-width: 720px) {
-
-    @keyframes fly-from-right {
-        0% {
-            opacity: 0;
-            transform: translate(100%, -100%);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateX(8vw);
-        }
     }
 }
 </style>
