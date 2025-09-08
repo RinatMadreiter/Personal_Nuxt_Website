@@ -5,7 +5,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate && (if exist .output\\public\\NUL (type NUL > .output\\public\\.nojekyll) else (touch .output/public/.nojekyll))",
+    "generate-windows": "nuxt generate && (if exist .output\\public\\NUL (type NUL > .output\\public\\.nojekyll) else (touch .output/public/.nojekyll))",
+    "generate": "nuxt generate && touch .output/public/.nojekyll",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
