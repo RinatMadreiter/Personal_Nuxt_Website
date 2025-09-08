@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<style lang="css">
+<style lang="css" scoped>
 .welcome-navigaion {
   height: 100vh;
 }
