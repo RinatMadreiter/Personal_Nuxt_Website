@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main>
+    <main class="welcome-navigaion">
       <NavigationMenu />
       <WelcomeSection />
     </main>
@@ -13,8 +13,8 @@
   </div>
 </template>
 
-<style lang="css" scoped>
-main {
+<style lang="css">
+.welcome-navigaion {
   height: 100vh;
 }
 </style>
