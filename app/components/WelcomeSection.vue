@@ -1,13 +1,21 @@
 <script setup>
+import { ref, onMounted } from 'vue'
 import profileImage from '/img/welcomesection/profile.webp'
 import { useScrollTwice } from '~/composables/useScrollTwice.js'
 
 const { scrollTwice } = useScrollTwice(470)
 const imageLoaded = ref(false)
+const imgRef = ref(null)
 
 function onImageLoad() {
     imageLoaded.value = true
 }
+
+onMounted(() => {
+    if (imgRef.value && imgRef.value.complete) {
+        imageLoaded.value = true
+    }
+})
 
 </script>
 
@@ -27,7 +35,8 @@ function onImageLoad() {
             <a @click="scrollTwice('contact-me')"><button>Contact Me</button></a>
 
         </div>
-        <img :src="profileImage" :class="['profile-fade', { fade: imageLoaded }]" @load="onImageLoad" loading="eager" alt="Profile" />
+        <img :src="profileImage" :class="['profile-fade', { fade: imageLoaded }]" @load="onImageLoad" loading="eager"
+            ref="imgRef" alt="Profile" />
     </div>
 </template>
 
