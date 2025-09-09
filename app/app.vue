@@ -14,6 +14,8 @@
 </template>
 
 <style lang="css" scoped>
+@import url("~/assets/styles/main.css");
+
 .welcome-navigaion {
   height: 100vh;
 }
