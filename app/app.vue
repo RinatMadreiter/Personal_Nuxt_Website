@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="css">
 @import url("~/assets/styles/main.css");
 
 .welcome-navigaion {
