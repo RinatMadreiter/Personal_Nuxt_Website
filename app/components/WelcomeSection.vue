@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, watchEffect  } from 'vue'
 import profileImage from '/img/welcomesection/profile.webp'
 import { useScrollTwice } from '~/composables/useScrollTwice.js'
 
@@ -11,10 +11,10 @@ function onImageLoad() {
     imageLoaded.value = true
 }
 
-onMounted(() => {
-    if (imgRef.value && imgRef.value.complete) {
-        imageLoaded.value = true
-    }
+watchEffect(() => {
+  if (imgRef.value && imgRef.value.complete) {
+    imageLoaded.value = true
+  }
 })
 
 </script>
