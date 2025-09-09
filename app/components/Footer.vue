@@ -8,18 +8,18 @@
             <li>
 
                 <NuxtLink target="_blank" to="https://github.com/RinatMadreiter">
-                    <img class="invert-color" src="/img/footer/github-white.png"> </img>
+                    <img loading="lazy" class="invert-color" src="/img/footer/github-white.png"> </img>
                 </NuxtLink>
             </li>
             <li>
                 <NuxtLink target="_blank" to="https://www.linkedin.com/in/rinat-madreiter">
-                    <img src="/img/footer/linkedin.svg"> </img>
+                    <img loading="lazy" src="/img/footer/linkedin.svg"> </img>
                 </NuxtLink>
             </li>
             <li>
                 <span>Built with
                     <NuxtLink target="_blank" to="https://nuxt.com/">
-                        <img src="/img/footer/SkillIconsNuxtjsDark.svg"></img>
+                        <img loading="lazy" src="/img/footer/SkillIconsNuxtjsDark.svg"></img>
                     </NuxtLink>
                 </span>
             </li>

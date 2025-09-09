@@ -14,8 +14,6 @@ const skillsImgSrcPath = [
     { name: 'Business Software', path: '/img/skills/business.png' }
 ];
 
-const skillsImgRefs = skillsImgSrcPath.map(() => useLazyFadeImg());
-
 </script>
 
 
