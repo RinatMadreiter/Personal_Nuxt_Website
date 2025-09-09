@@ -23,7 +23,7 @@
 import LoadedLazyImage from './LoadedLazyImage.vue';
 
 const aboutMeImgSrcPath = [
-    { name: 'Profile', path: '/img/profile4.jpeg' },
+    { name: 'Profile', path: '/img/about/profile4.jpeg' },
     { name: 'AboutImage1', path: '/img/about/1.png' },
     { name: 'AboutImage2', path: '/img/about/2.png' },
     { name: 'AboutImage3', path: '/img/about/3.png' },

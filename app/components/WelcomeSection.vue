@@ -1,9 +1,13 @@
 <script setup>
-import profileImage from '/img/components/welcomeSection/profile.jpg'
-import LoadedLazyImage from './LoadedLazyImage.vue';
+import profileImage from '/img/welcomesection/profile.webp'
 import { useScrollTwice } from '~/composables/useScrollTwice.js'
 
 const { scrollTwice } = useScrollTwice(470)
+const imageLoaded = ref(false)
+
+function onImageLoad() {
+    imageLoaded.value = true
+}
 
 </script>
 
@@ -23,8 +27,7 @@ const { scrollTwice } = useScrollTwice(470)
             <a @click="scrollTwice('contact-me')"><button>Contact Me</button></a>
 
         </div>
-
-        <LoadedLazyImage :imgPath="profileImage" rel="preload" fetchpriority="high" />
+        <img :src="profileImage" :class="['profile-fade', { fade: imageLoaded }]" @load="onImageLoad" loading="eager" alt="Profile" />
     </div>
 </template>
 
@@ -118,16 +121,22 @@ const { scrollTwice } = useScrollTwice(470)
 }
 
 
+.profile-fade {
+    opacity: 0;
+    transform: translateX(50%);
+    transition: all 1500ms;
+}
+
+.profile-fade.fade {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .dynamic-typing {
 
     @media(min-width: 1287px) {
         width: 696px;
     }
-}
-
-// /* needed for lazyload animation */
-.main :deep(.opacity-0) {
-    transition: transform 3s, opacity 3s;
 }
 
 .primary {
