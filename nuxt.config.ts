@@ -2,6 +2,7 @@ export default defineNuxtConfig({
   ssr: false,
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+
   app: {
     baseURL: '/',
     head: {
@@ -15,4 +16,20 @@ export default defineNuxtConfig({
       ]
     }
   },
+  modules: ['@nuxt/fonts'],
+  fonts: {
+    families: [
+      {
+        name: 'Inter',
+        provider: 'none',
+        weights: ['400', '500', '700', '900'],
+        src: [
+          '/fonts/inter/inter-v11-latin-regular.woff2',
+          '/fonts/inter/inter-v11-latin-500.woff2',
+          '/fonts/inter/inter-v11-latin-700.woff2',
+          '/fonts/inter/inter-v11-latin-900.woff2',
+        ]
+      }
+    ]
+  }
 })
