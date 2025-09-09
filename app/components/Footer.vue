@@ -18,7 +18,7 @@
             </li>
             <li>
                 <span>Built with
-                    <NuxtLink to="https://nuxt.com/">
+                    <NuxtLink target="_blank" to="https://nuxt.com/">
                         <img src="/img/footer/SkillIconsNuxtjsDark.svg"></img>
                     </NuxtLink>
                 </span>
