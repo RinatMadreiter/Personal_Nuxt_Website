@@ -35,7 +35,7 @@ onMounted(() => {
             <a @click="scrollTwice('contact-me')"><button>Contact Me</button></a>
 
         </div>
-        <img :src="profileImage" :class="['profile-fade', { fade: imageLoaded }]" @load="onImageLoad" loading="eager"
+        <img :src="profileImage" :class="['profile-fade', { fade: imageLoaded }]" @load="onImageLoad" loading="eager" fetchpriority="high"
             ref="imgRef" alt="Profile" />
     </div>
 </template>
