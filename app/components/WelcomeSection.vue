@@ -36,7 +36,7 @@ watchEffect(() => {
 
         </div>
         <img :src="profileImage" :class="['profile-fade', { fade: imageLoaded }]" @load="onImageLoad" loading="eager" fetchpriority="high"
-            ref="imgRef" alt="Profile" />
+            ref="imgRef" alt="Rinat M." />
     </div>
 </template>
 

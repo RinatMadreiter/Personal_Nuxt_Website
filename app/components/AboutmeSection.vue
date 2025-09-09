@@ -1,7 +1,7 @@
 <template>
     <div class="about-section" id="about">
         <div class="upper-container">
-            <LoadedLazyImage :imgPath="aboutMeImgSrcPath[0].path" />
+            <LoadedLazyImage :imgPath="aboutMeImgSrcPath" alt="Rinat M." />
             <div class="short-description">
                 <h1>About me</h1>
                 <p>"I'm a goal oriented developer who loves to create web applications with proven web technologies and
@@ -11,7 +11,7 @@
 
         <div class="journey-section">
             <div class="journey-sub-section" v-for="item in journeyItems" :key="item.imgPath">
-                <LoadedLazyImage :imgPath="item.imgPath" />
+                <LoadedLazyImage :imgPath="item.imgPath" :alt="item.alt" />
                 <h4>{{ item.title }}</h4>
                 <p>{{ item.description }}</p>
             </div>
@@ -22,40 +22,36 @@
 <script setup>
 import LoadedLazyImage from './LoadedLazyImage.vue';
 
-const aboutMeImgSrcPath = [
-    { name: 'Profile', path: '/img/about/profile4.jpeg' },
-    { name: 'AboutImage1', path: '/img/about/1.png' },
-    { name: 'AboutImage2', path: '/img/about/2.png' },
-    { name: 'AboutImage3', path: '/img/about/3.png' },
-    { name: 'AboutImage4', path: '/img/about/4.png' }
-];
+const aboutMeImgSrcPath = '/img/about/profile4.jpeg';
 
+ 
 const journeyItems = [
     {
         imgPath: '/img/about/1.png',
+        alt: '',
         title: 'MY JOURNEY BEGAN',
         description: 'as a shift supervisor in a high pressure service driven environment and then as a shipping director for a multi channeled operation.'
     },
     {
         imgPath: '/img/about/2.png',
+        alt: '',
         title: 'MY PASSION',
         description: 'was born while studying technical computer science. I decided to turn creating solutions through coding and technology into my profession.'
     },
     {
         imgPath: '/img/about/3.png',
+        alt: '',
         title: 'SEARCHING FOR',
         description: 'ways to deepen my knowledge in frontend development, I found a project based coding academy. All my built from the ground up projects and codes were reviewed by experienced programmers which helped me to fine tune my skills.'
     },
     {
         imgPath: '/img/about/4.png',
+        alt: '',
         title: 'MY GOAL',
         description: 'to turn my passion into my profession is closer than ever before. I am always ready for a new challenge and to grow as a frontend developer.'
     }
 ];
 </script>
-
-
-
 
 
 <style lang="scss" scoped>

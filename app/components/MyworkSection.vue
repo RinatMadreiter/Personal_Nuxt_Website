@@ -9,7 +9,7 @@
         </div>
         <div class="work-collection">
             <div v-for="work in worksToShow" :key="work.id" class="single-work-container">
-                <LoadedLazyImage :imgPath="work.imgPath" />
+                <LoadedLazyImage :imgPath="work.imgPath" :alt="work.alt" />
                 <div class="middle">
                     <div class="work-description">
                         <h3>{{ work.title }}</h3>
@@ -38,6 +38,7 @@ const works = [
         id: 'photogallery',
         imgPath: '/img/work/photogallery.webp',
         title: 'Photo-Gallery',
+        alt: 'Screenshot of the Photo Gallery app displaying beautiful pictures',
         description: 'Java Script - based, impressive photo gallery',
         url: 'https://rinatmadreiter.github.io/Photo-Gallery/',
         categories: ['js']
@@ -46,6 +47,7 @@ const works = [
         id: 'quizapp',
         imgPath: '/img/work/quizapp.png',
         title: 'Bootstrap Quizapp',
+        alt: 'Screenshot of the Bootstrap Quizapp displaying a modern web quiz',
         description: 'Boardgame Quizapp build with javascript and bootstrap',
         url: 'https://rinatmadreiter.github.io/Quiz-App/',
         categories: ['js']
@@ -54,6 +56,7 @@ const works = [
         id: 'elpolloloco',
         imgPath: '/img/work/elpolloloco.png',
         title: 'El Pollo Loco',
+        alt: 'Screenshot of the elpolloloco app displaying a 2D western jump and run game',
         description: 'Java Script - based jump and run desktop game.',
         url: 'https://rinatmadreiter.github.io/El_Pollo_Loco/',
         categories: ['js']
@@ -62,6 +65,7 @@ const works = [
         id: 'pokedex',
         imgPath: '/img/work/pokedex.png',
         title: 'Pokedex',
+        alt: 'Screenshot of the Pokedex app displaying different pokemons',
         description: 'Using the RESTful Pokémon API to display pokemon via JavaScript.',
         url: 'https://rinatmadreiter.github.io/pokedex/',
         categories: ['js']
@@ -70,6 +74,7 @@ const works = [
         id: 'portfolio',
         imgPath: '/img/work/portfolio.webp',
         title: 'Personal Website',
+        alt: 'Screenshot of the current modern portfolio website',
         description: 'Nuxt - based personal portfolio website.',
         url: '/#top',
         categories: ['nuxt']
@@ -78,6 +83,7 @@ const works = [
         id: 'cardgame',
         imgPath: '/img/work/cardgame.webp',
         title: 'Language Card Game',
+        alt: 'Screenshot of cardgame app displaying the start screen of the game with lots of poker cards',
         description: 'Angular - based card game.',
         url: 'https://github.com/RinatMadreiter/ringoffire',
         categories: ['angular'],

@@ -3,15 +3,15 @@
 import LoadedLazyImage from './LoadedLazyImage.vue';
 
 const skillsImgSrcPath = [
-    { name: 'Nuxt', path: '/img/skills/nuxt.svg' },
-    { name: 'Vue', path: '/img/skills/vue.svg' },
-    { name: 'JavaScript', path: '/img/skills/js.svg' },
-    { name: 'HTML', path: '/img/skills/html.svg' },
-    { name: 'CSS', path: '/img/skills/css.svg' },
-    { name: 'Github', path: '/img/skills/github.svg' },
-    { name: 'Apps', path: '/img/skills/phone.png' },
-    { name: 'Scrum', path: '/img/skills/scrum.svg' },
-    { name: 'Business Software', path: '/img/skills/business.png' }
+    { name: 'Nuxt', path: '/img/skills/nuxt.svg', alt: '' },
+    { name: 'Vue', path: '/img/skills/vue.svg', alt: '' },
+    { name: 'JavaScript', path: '/img/skills/js.svg', alt: '' },
+    { name: 'HTML', path: '/img/skills/html.svg', alt: '' },
+    { name: 'CSS', path: '/img/skills/css.svg', alt: '' },
+    { name: 'Github', path: '/img/skills/github.svg', alt: '' },
+    { name: 'Apps', path: '/img/skills/phone.png', alt: '' },
+    { name: 'Scrum', path: '/img/skills/scrum.svg', alt: '' },
+    { name: 'Business Software', path: '/img/skills/business.png', alt: '' }
 ];
 
 </script>
@@ -23,7 +23,7 @@ const skillsImgSrcPath = [
         <div class="skills-container">
             <div class="skill" v-for="(skill, index) in skillsImgSrcPath" :key="skill.name">
                 {{ skill.name }}
-                <LoadedLazyImage :img-path="skill.path" />
+                <LoadedLazyImage :img-path="skill.path" :alt="skill.alt" />
             </div>
         </div>
     </section>
