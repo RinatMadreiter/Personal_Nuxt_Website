@@ -1,12 +1,15 @@
 export default defineNuxtConfig({
-  ssr: true,
+  ssr: false,
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
   app: {
     baseURL: '/',
     head: {
-      title: 'Rinat Madreiter',
+      title: 'Personal Portfolio Website built with Nuxt 4',
+      htmlAttrs: {
+        lang: 'en'
+      },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
