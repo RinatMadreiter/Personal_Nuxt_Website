@@ -28,7 +28,12 @@ export default defineNuxtConfig({
           '/fonts/inter/inter-v11-latin-500.woff2',
           '/fonts/inter/inter-v11-latin-700.woff2',
           '/fonts/inter/inter-v11-latin-900.woff2',
-        ]
+        ],
+        fallbacks: [
+          'sans-serif',
+        ],
+        display: 'swap',
+        preload: true,
       }
     ]
   }
