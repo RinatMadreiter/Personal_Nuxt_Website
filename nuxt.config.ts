@@ -10,6 +10,14 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en'
       },
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          'http-equiv': 'Content-Security-Policy',
+          content:
+            "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' https: data:;"
+        }
+      ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
