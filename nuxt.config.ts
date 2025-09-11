@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   compatibilityDate: '2025-09-11',
   devtools: { enabled: true },
 
@@ -11,7 +11,6 @@ export default defineNuxtConfig({
         lang: 'en'
       },
       meta: [
-        { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           'http-equiv': 'Content-Security-Policy',
