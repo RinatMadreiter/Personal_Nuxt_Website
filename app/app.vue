@@ -24,9 +24,16 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     {
       'http-equiv': 'Content-Security-Policy',
-      content:
-        "default-src 'self'; script-src 'self' 'unsafe-inline' https://app.formbricks.com;; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' https: data:;"
+      content: `
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://app.formbricks.com;
+    connect-src 'self' https://app.formbricks.com;
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data:;
+    font-src 'self' https: data:;
+  `
     }
+
   ]
 })
 </script>
