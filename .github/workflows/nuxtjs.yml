@@ -63,7 +63,6 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            .output/public
             .nuxt
           key: ${{ runner.os }}-nuxt-build-${{ hashFiles('.output/public/**') }}
           restore-keys: |
