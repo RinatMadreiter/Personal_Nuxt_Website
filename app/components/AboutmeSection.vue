@@ -24,7 +24,7 @@ import LoadedLazyImage from './LoadedLazyImage.vue';
 
 const aboutMeImgSrcPath = '/img/about/profile4.jpeg';
 
- 
+
 const journeyItems = [
     {
         imgPath: '/img/about/1.png',
@@ -35,20 +35,20 @@ const journeyItems = [
     {
         imgPath: '/img/about/2.png',
         alt: '',
-        title: 'MY PASSION',
-        description: 'was born while studying technical computer science. I decided to turn creating solutions through coding and technology into my profession.'
+        title: 'MY FOUNDATION',
+        description: 'was built while studying technical computer science, where my passion for creating solutions through coding was born. I deepened my front-end knowledge at a project-based coding academy, where my codes and projects were reviewed by experienced programmers, allowing me to fine-tune my skills from the ground up.'
     },
     {
         imgPath: '/img/about/3.png',
         alt: '',
-        title: 'SEARCHING FOR',
-        description: 'ways to deepen my knowledge in frontend development, I found a project based coding academy. All my built from the ground up projects and codes were reviewed by experienced programmers which helped me to fine tune my skills.'
+        title: 'MY EXPERIENCE',
+        description: 'In search of real-world application, I joined a digital agency with over 100 employees. For three years, I\'ve worked collaboratively on agile teams, building and delivering large-scale projects for a diverse range of clients, from concept to launch.'
     },
     {
         imgPath: '/img/about/4.png',
         alt: '',
         title: 'MY GOAL',
-        description: 'to turn my passion into my profession is closer than ever before. I am always ready for a new challenge and to grow as a frontend developer.'
+        description: 'is to continue delivering valuable solutions on complex projects and to lead with innovation. I am always ready for a new challenge and to make a significant impact as an experienced front-end developer.'
     }
 ];
 </script>

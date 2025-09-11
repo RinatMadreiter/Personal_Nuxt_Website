@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --open",
     "generate-windows": "nuxt generate && (if exist .output\\public\\NUL (type NUL > .output\\public\\.nojekyll) else (touch .output/public/.nojekyll))",
     "generate": "nuxt generate && touch .output/public/.nojekyll",
     "preview": "nuxt preview",
