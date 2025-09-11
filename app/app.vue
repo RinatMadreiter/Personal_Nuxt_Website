@@ -25,17 +25,7 @@ useHead({
     {
       'http-equiv': 'Content-Security-Policy',
       content:
-        `
-    default-src 'self';
-    script-src 'self' https://app.formbricks.com;
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data:;
-    font-src 'self' https: data:;
-    object-src 'none';                  
-    base-uri 'self';                   
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-  `
+        "default-src 'self'; script-src 'self' https://app.formbricks.com ; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' https: data:;"
     }
   ]
 })
