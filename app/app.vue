@@ -14,6 +14,12 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
+import { useFrameBuster } from '~/composables/useFrameBuster.js'
+
+onMounted(() => {
+  useFrameBuster()
+})
 
 useHead({
   title: 'Personal Portfolio Website built with Nuxt 4',
