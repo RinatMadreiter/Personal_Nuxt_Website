@@ -31,6 +31,10 @@ useHead({
     img-src 'self' data:;
     font-src 'self' https: data:;
   `
+    },
+    {
+      name: 'referrer',
+      content: 'strict-origin-when-cross-origin'
     }
   ]
 })
