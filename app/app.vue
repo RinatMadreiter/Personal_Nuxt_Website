@@ -36,7 +36,6 @@ useHead({
     style-src 'self' 'unsafe-inline';
     img-src 'self' data:;
     font-src 'self' https: data:;
-    frame-ancestors 'none';
   `
     },
     {

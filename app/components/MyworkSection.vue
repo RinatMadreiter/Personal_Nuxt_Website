@@ -45,7 +45,7 @@ const works = [
     },
     {
         id: 'quizapp',
-        imgPath: '/img/work/quizapp.png',
+        imgPath: '/img/work/quizapp.webp',
         title: 'Bootstrap Quizapp',
         alt: 'Screenshot of the Bootstrap Quizapp displaying a modern web quiz',
         description: 'Boardgame Quizapp build with javascript and bootstrap',
@@ -54,7 +54,7 @@ const works = [
     },
     {
         id: 'elpolloloco',
-        imgPath: '/img/work/elpolloloco.png',
+        imgPath: '/img/work/elpolloloco.webp',
         title: 'El Pollo Loco',
         alt: 'Screenshot of the elpolloloco app displaying a 2D western jump and run game',
         description: 'Java Script - based jump and run desktop game.',
@@ -63,7 +63,7 @@ const works = [
     },
     {
         id: 'pokedex',
-        imgPath: '/img/work/pokedex.png',
+        imgPath: '/img/work/pokedex.webp',
         title: 'Pokedex',
         alt: 'Screenshot of the Pokedex app displaying different pokemons',
         description: 'Using the RESTful Pokémon API to display pokemon via JavaScript.',

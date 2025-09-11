@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watchEffect  } from 'vue'
+import { ref, watchEffect } from 'vue'
 import profileImage from '/img/welcomesection/profile.webp'
 import { useScrollTwice } from '~/composables/useScrollTwice.js'
 
@@ -12,9 +12,9 @@ function onImageLoad() {
 }
 
 watchEffect(() => {
-  if (imgRef.value && imgRef.value.complete) {
-    imageLoaded.value = true
-  }
+    if (imgRef.value && imgRef.value.complete) {
+        imageLoaded.value = true
+    }
 })
 
 </script>
@@ -35,8 +35,8 @@ watchEffect(() => {
             <a @click="scrollTwice('contact-me')"><button>Contact Me</button></a>
 
         </div>
-        <img :src="profileImage" :class="['profile-fade', { fade: imageLoaded }]" @load="onImageLoad" loading="eager" fetchpriority="high"
-            ref="imgRef" alt="Rinat M." />
+        <img :src="profileImage" :class="['profile-fade', { fade: imageLoaded }]" @load="onImageLoad" loading="eager"
+            fetchpriority="high" ref="imgRef" alt="Rinat M." />
     </div>
 </template>
 
@@ -50,10 +50,6 @@ watchEffect(() => {
     margin-right: 14vw;
     margin-left: 14vw;
 
-    p {
-        margin-block-start: 0;
-        margin-block-end: 0;
-    }
 
     @media(max-width: 1000px) {
         flex-direction: column-reverse;
@@ -271,69 +267,6 @@ button {
 
         @media only screen and (orientation: landscape) and (min-width: 851px) and (max-width: 1000px) and (max-height: 500px) {
             margin-top: 64px;
-        }
-    }
-}
-
-
-@media(max-width: 1286px) {
-
-    @keyframes move-down {
-        0% {
-            margin-top: 110px;
-        }
-
-        100% {
-            margin-top: 80px;
-        }
-    }
-}
-
-@media(max-width: 1440px) and (max-height: 900px) and (min-width:1287px) {
-
-    @keyframes move-down {
-        0% {
-            margin-top: 29vh;
-        }
-
-        100% {
-            margin-top: 26vh;
-        }
-    }
-}
-
-@media(max-width: 1920px) and (max-height: 1080px) and (min-width: 1441px) {
-    @keyframes move-down {
-        0% {
-            margin-top: 14.5vh
-        }
-
-        100% {
-            margin-top: 11.5vh
-        }
-    }
-}
-
-@media(max-width: 2600px) and (max-height: 1080px) and (min-width: 1921px) {
-    @keyframes move-down {
-        0% {
-            margin-top: 12vh;
-        }
-
-        100% {
-            margin-top: 9vh;
-        }
-    }
-}
-
-@media(min-width: 2601px) and (min-height: 1081px) {
-    @keyframes move-down {
-        0% {
-            margin-top: 28vh;
-        }
-
-        100% {
-            margin-top: 24vh;
         }
     }
 }

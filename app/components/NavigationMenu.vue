@@ -1,6 +1,6 @@
 <template>
     <div class="nav-container" id="top">
-        <a href="#top" @click.stop="menuOpen = false"><img src="/img/logo.png" alt="Logo showing R & M on a screen"></a>
+        <a href="#top" @click.stop="menuOpen = false"><img src="/img/logo.webp" alt="Logo showing R & M on a screen"></a>
 
         <!-- Desktop Navigation -->
         <div class="link-container hide-mobile">
