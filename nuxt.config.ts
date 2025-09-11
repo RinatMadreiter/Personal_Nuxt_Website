@@ -5,11 +5,6 @@ export default defineNuxtConfig({
 
   app: {
     baseURL: '/',
-    // head: {
-    //   link: [
-    //     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    //   ]
-    // }
   },
   modules: ['@nuxt/fonts'],
   fonts: {
