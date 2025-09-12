@@ -116,7 +116,11 @@ const journeyItems = [
         border-radius: 50%;
         object-position: 70%;
 
-        @media(max-width: 1286px) {
+        @media(min-width: 721px) and (max-width: 1024px) {
+            margin-right: 16px;
+        }
+
+        @media(min-width: 1025px) {
             margin-right: 32px;
         }
 
