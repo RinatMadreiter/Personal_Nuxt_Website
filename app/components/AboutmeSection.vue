@@ -22,7 +22,7 @@
 <script setup>
 import LoadedLazyImage from './LoadedLazyImage.vue';
 
-const aboutMeImgSrcPath = '/img/about/profile4.jpeg';
+const aboutMeImgSrcPath = '/img/about/profile4.webp';
 
 
 const journeyItems = [
