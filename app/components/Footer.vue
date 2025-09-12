@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <footer>
+    <footer id="footer">
         <ul>
             <li>
 

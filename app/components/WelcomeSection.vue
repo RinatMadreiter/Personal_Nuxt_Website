@@ -3,7 +3,7 @@ import { ref, watchEffect } from 'vue'
 import profileImage from '/img/welcomesection/profile.webp'
 import { useScrollTwice } from '~/composables/useScrollTwice.js'
 
-const { scrollTwice } = useScrollTwice(510)
+const { scrollTwice } = useScrollTwice(470)
 const imageLoaded = ref(false)
 const imgRef = ref(null)
 
@@ -32,7 +32,7 @@ watchEffect(() => {
                 </div>
             </div>
 
-            <a @click="scrollTwice('contact-me')"><button>Contact Me</button></a>
+            <a @click="scrollTwice('footer')"><button>Contact Me</button></a>
 
         </div>
         <img :src="profileImage" :class="['profile-fade', { fade: imageLoaded }]" @load="onImageLoad" loading="eager"
