@@ -307,7 +307,7 @@ button {
 
 .typing-demo {
     width: 23ch;
-    animation: typing 1.5s steps(23), border .5s step-end infinite alternate, border-none-end 1s 1.5s infinite;
+    animation: typing 1s steps(23), border .5s step-end infinite alternate, border-none-end 1s 1s infinite;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
@@ -368,7 +368,7 @@ button {
 
 .typing-demo2 {
     width: 19ch;
-    animation: typing 1.5s steps(19) 2s, border .5s step-end infinite alternate, border-none-start 2s 1, border-none-end 1s 3.5s infinite;
+    animation: typing 1s steps(19) 1.5s, border .5s step-end infinite alternate, border-none-start 1.5s 1, border-none-end 1s 2.5s infinite;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
