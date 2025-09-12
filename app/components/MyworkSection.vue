@@ -234,6 +234,7 @@ img {
 }
 
 .work-collection {
+    min-height: 100vh;
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -241,6 +242,9 @@ img {
     margin-right: 14vw;
     margin-left: 14vw;
 
+    @media(max-width: 1220px) {
+       min-height: 200vh;
+    }
 
     @media(max-width: 720px) {
         margin-right: 8vw;
