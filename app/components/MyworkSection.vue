@@ -7,7 +7,7 @@
             <button @click="showJS">Java Script</button>
             <button @click="showAngular">Angular</button>
         </div>
-        <div class="work-collection">
+        <div class="work-collection" :class="{ 'set-min-height': activeFilterCount }">
             <div v-for="work in worksToShow" :key="work.id" class="single-work-container">
                 <LoadedLazyImage :imgPath="work.imgPath" :alt="work.alt" />
                 <div class="middle">
@@ -90,6 +90,11 @@ const works = [
         buttonText: 'Visit Repository'
     }
 ];
+
+const activeFilterCount = computed(() => {
+    return selectedFilters.value.size > 1;
+});
+
 
 const filterClicked = ref(false);
 const selectedFilters = ref(new Set(['js', 'angular', 'nuxt'])); // all selected initially
@@ -233,8 +238,16 @@ img {
 
 }
 
+.set-min-height {
+    min-height: 100vh;
+
+    @media (max-width: 1220px) {
+        min-height: 200vh;
+    }
+}
+
+
 .work-collection {
-    min-height: 50vh;
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -242,9 +255,6 @@ img {
     margin-right: 14vw;
     margin-left: 14vw;
 
-    @media(max-width: 1220px) {
-       min-height: 100vh;
-    }
 
     @media(max-width: 720px) {
         margin-right: 8vw;
@@ -262,6 +272,7 @@ img {
     margin-left: 16px;
     margin-right: 16px;
     position: relative;
+    height: max-content;
 
     @media(max-width: 300px) {
         margin-left: 5px;
