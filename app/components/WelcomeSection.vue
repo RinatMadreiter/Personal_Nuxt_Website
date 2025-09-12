@@ -3,7 +3,7 @@ import { ref, watchEffect } from 'vue'
 import profileImage from '/img/welcomesection/profile.webp'
 import { useScrollTwice } from '~/composables/useScrollTwice.js'
 
-const { scrollTwice } = useScrollTwice(490)
+const { scrollTwice } = useScrollTwice(510)
 const imageLoaded = ref(false)
 const imgRef = ref(null)
 
