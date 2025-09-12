@@ -4,8 +4,8 @@
             <LoadedLazyImage :imgPath="aboutMeImgSrcPath" alt="Rinat M." />
             <div class="short-description">
                 <h1>About me</h1>
-                <p>"I'm a goal oriented developer who loves to create web applications with proven web technologies and
-                    well made user experiences!"</p>
+                <p>I'm a goal oriented developer who loves to create web applications with proven web technologies and
+                    well made user experiences!</p>
             </div>
         </div>
 
