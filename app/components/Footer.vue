@@ -95,4 +95,10 @@ img {
         width: 5vh;
     }
 }
+
+span {
+    @media(max-width: 570px) {
+        margin-right: 52px;
+    }
+}
 </style>
