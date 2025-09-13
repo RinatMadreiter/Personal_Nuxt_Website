@@ -67,6 +67,7 @@ textarea {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {

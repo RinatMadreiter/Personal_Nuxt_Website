@@ -6,7 +6,7 @@
         <div class="link-container hide-mobile">
             <a href="#myWork">PORTFOLIO</a>
             <a @click="scrollTwice('about')">ABOUT</a>
-            <a @click="scrollTwice('contact-me')">CONTACT</a>
+            <a @click="scrollTwice('footer')">CONTACT</a>
         </div>
 
         <!-- Mobile Navigation -->

@@ -12,7 +12,7 @@
         }">
             <a href="#myWork" @click="toggleMenu">PORTFOLIO</a>
             <a @click="handleMobileNavClick('about')">ABOUT</a>
-            <a @click="handleMobileNavClick('contact-me')">CONTACT</a>
+            <a @click="handleMobileNavClick('footer')">CONTACT</a>
         </div>
     </div>
 </template>

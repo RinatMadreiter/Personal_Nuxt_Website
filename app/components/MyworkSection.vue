@@ -244,6 +244,10 @@ img {
     @media (max-width: 1220px) {
         min-height: 200vh;
     }
+    
+    @media (max-width: 560px) {
+        min-height: 130vh;
+    }
 }
 
 
