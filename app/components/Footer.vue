@@ -12,7 +12,7 @@
                 </NuxtLink>
             </li>
             <li>
-                <NuxtLink target="_blank" to="https://www.linkedin.com/in/rinat-madreiter">
+                <NuxtLink target="_blank" to="https://www.linkedin.com/in/rinat-developer">
                     <img loading="lazy" src="/img/footer/linkedin.svg" alt="Linkedin Logo"> </img>
                 </NuxtLink>
             </li>
